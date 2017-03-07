@@ -8,18 +8,18 @@ The following **required** functionality is complete:
 
 - [ ] Initial Project is set up
 - [ ] User can log in or sign up for linkbase
-- [ ] User can search for companies in a target location 
+- [ ] User can search for companies in a target location
 - [ ] Search results based on companies having a funding event in recent weeks/months
-- [ ] Autolayout is implemented 
+- [ ] Autolayout is implemented
 - [ ] App Icons, launch screen, and additional custom UI elements are implemented
 
 The following **optional** features are implemented:
-- [ ] User can add selected GitHub projects to their portfolio 
-- [ ] User can link to their LinkedIn Profile 
-- [ ] User can send an email or chat to the company, including a link or email with their portfolio 
+- [ ] User can add selected GitHub projects to their portfolio
+- [ ] User can link to their LinkedIn Profile
+- [ ] User can send an email or chat to the company, including a link or email with their portfolio
 
 
-## Video Walkthrough 
+## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
@@ -30,11 +30,22 @@ GIF created with LiceCap(http://www.cockos.com/licecap/).
 
 ## Notes
 
+## Wireframes
+
+| Login |
+| ---   |
+| <img height="1200" alt="ProfileView" src="./wireframes/ProfileView.png" > |
+| Feed |
+| ---  |
+| <img height="1200" alt="SearchView" src="./wireframes/SearchView.png" > |
+| Detail |
+| ---    |
+| <img height="1200" alt="DetailViewSearch" src="./wireframes/DetailSearchView.png" > |
 
 ## License
 
-    Copyright 2017 [NAME OF TEAM]
-    
+    Copyright 2017 [LinkBase by Robert, Barbarra, and Michael]
+
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
