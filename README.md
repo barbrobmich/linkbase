@@ -7,16 +7,16 @@ Linkbase is an app that "links" users with affiliations to different companies t
 The following **required** functionality is complete:
 
 - [ ] Initial Project is set up
-- [ ] Set up view controllers 
-- [ ] Data model set up and linked across view controllers  
-- [ ] UI features implemented (specify) 
-- [ ] Implement Autolayout
-- [ ] Added icons, launch screen, app icon  
+- [ ] User can log in or sign up for linkbase
+- [ ] User can search for companies in a target location 
+- [ ] Search results based on companies having a funding event in recent weeks/months
+- [ ] Autolayout is implemented 
+- [ ] App Icons, launch screen, and additional custom UI elements are implemented
 
 The following **optional** features are implemented:
-- [ ] To be determined
-- [ ] To be determined
-- [ ] To be determined
+- [ ] User can add selected GitHub projects to their portfolio 
+- [ ] User can link to their LinkedIn Profile 
+- [ ] User can send an email or chat to the company, including a link or email with their portfolio 
 
 
 ## Video Walkthrough 
