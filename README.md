@@ -42,6 +42,13 @@ GIF created with LiceCap(http://www.cockos.com/licecap/).
 | ---    |
 | <img height="1200" alt="DetailViewSearch" src="./wireframes/DetailSearchView.png" > |
 
+## Schema
+
+| Schema |
+| ---    |
+|  <a href="./Group2Schema_2017March13.pdf">See PDF!</a> |
+
+
 ## License
 
     Copyright 2017 [LinkBase by Robert, Barbarra, and Michael]
