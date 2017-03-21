@@ -6,7 +6,7 @@ Linkbase is an app that "links" users with affiliations to different companies t
 
 The following **required** functionality is complete:
 
-- [ ] Initial Project is set up
+- [x] Initial Project is set up
 - [ ] User can log in or sign up for linkbase
 - [ ] User can search for companies in a target location
 - [ ] Search results based on companies having a funding event in recent weeks/months
