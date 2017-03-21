@@ -1,4 +1,5 @@
 # Group Project - *linkbase*
+Team: Robert Hernandez, Michael Leung, Barbara Ristau
 
 Linkbase is an app that "links" users with affiliations to different companies to get your next job
 
