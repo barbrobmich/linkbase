@@ -42,9 +42,9 @@ Company Related Features:
 Challenge Related Features:
 
 - [ ] Alert asks user to select where to go
-- [ ] Comms View Controller - user is presneted with quetion and button to get new question
-- [ ] Comms View Controller - user can record answer 
-- [ ] Hud view is displayed after successful submission 
+- [ ] Comms View Controller - user is presneted with question and button to get new question
+- [X] Comms View Controller - user can record answer 
+- [X] Hud view is displayed after successful submission 
 - [ ] Tab bar with icons for stats, tech, comms sections 
 - [ ] Tech View Controller presents question 
 - [ ] User can select answer and submit
