@@ -58,9 +58,7 @@ class HudView: UIView{
                 
                 self.alpha = 1
                 self.transform = CGAffineTransform.identity
-            },
-                           completion: nil)
-            
+            }, completion: nil)
         }
     }
     
