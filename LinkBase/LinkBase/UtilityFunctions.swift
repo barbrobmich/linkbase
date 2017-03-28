@@ -15,3 +15,10 @@ func afterDelay(_ seconds: Double, closure: @escaping () -> ()) {
     DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: closure)
 }
 
+func getRandomNumber(count: Int) -> Int {
+   
+    let randomIndex = Int(arc4random_uniform(UInt32(count)))
+   
+    print("Number of Items: \(count), RandomIndex: \(randomIndex)")
+    return randomIndex
+}

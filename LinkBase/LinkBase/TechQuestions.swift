@@ -10,34 +10,20 @@ import Foundation
 
 struct TechQuestion {
     
-    var question: String?
-    var questionID: Int?
-    var ans1: String?
-    var ans2: String?
-    var ans3: String?
-    var ans4: String?
-    var correctResponse: String?
+    var question: String
+    var answers: [String]
+    var correctAnswer: Int
     
-    init() {
-        question = "What is Big O notation for the following problem?"
-        questionID = 1;
-        ans1 = "O(1)"
-        ans2 = "None of the above"
-        ans3 = "All of the above"
-        ans4 = "O(n^2)"
-    }
 }
 
 struct TechQuestionList {
     
-    var techList: [TechQuestion] = []
-    var placeholder: TechQuestion?
-    
-    init() {
+    var techList: [TechQuestion] = [
         
-        placeholder = TechQuestion()
-        techList.append(placeholder!)
+        TechQuestion(question: "What type of animal is this", answers: ["armadillo","mouse", "cat", "dog" ], correctAnswer: 2),
         
-    }
-    
+        TechQuestion(question: "How many seasons are in a year", answers: ["four", "two", "one", "three"], correctAnswer: 0),
+        
+        TechQuestion(question: "What color is the sun", answers: ["purple", "green", "blue", "yellow"], correctAnswer: 3)
+    ]
 }

@@ -22,14 +22,16 @@ class CommsViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPla
     var audioPlayer: AVAudioPlayer?
     var audioFileName: URL?
     
-    var questions: CommsQuestionList?
+    var questions: CommsQuestionList!
+    var index: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // new question should appear - need to work on model
         questions = CommsQuestionList()
-        questionTextLabel.text = questions?.commsList[0].question
+     
+        loadQuestion()
         
         // set up recording session
         
@@ -50,9 +52,16 @@ class CommsViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPla
         } catch {
             // failed to record!
         }
+    }
+    
+    func loadQuestion() {
         
+        index = getRandomNumber(count: (questions.commList.count))
+        questionTextLabel.text = questions.commList[index].question
         
     }
+    
+    
     
     // MARK: - AV RECORDING METHODS
     
@@ -125,6 +134,7 @@ class CommsViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPla
     
     @IBAction func onNewQuestionTapped(_ sender: UIButton) {
         print("Tapped on button to request new question")
+        loadQuestion()
         
     }
     
