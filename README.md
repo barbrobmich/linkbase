@@ -34,10 +34,10 @@ Company Related Features:
 - [ ] Profile icon as left nav bar, which segues to Profile VC, and icon on right, which segues to challenge section
 - [x] Detail page shows company detail
 - [x] Selecting company in home timeline goes to detail page
-- [ ] Favorites shows companies in tile format
+- [x] Favorites shows companies in tile format
 - [ ] Selecting title goes to detail page
 - [ ] Map view displays companies within radius of current location
-- [ ] Settings page allows user to change settings
+- [x] Settings page allows user to change settings
 
 Challenge Related Features:
 
