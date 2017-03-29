@@ -14,6 +14,15 @@ class ResultsCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
+    // Outlets specific to Comms Questions
+    
+    @IBOutlet weak var pendingReviewLabel: UILabel!
+    @IBOutlet weak var overallTextLabel: UILabel!
+    @IBOutlet weak var overallScoreLabel: UILabel!
+    @IBOutlet weak var styleTextLabel: UILabel!
+    @IBOutlet weak var styleScoreLabel: UILabel!
+    @IBOutlet weak var relevanceTextLabel: UILabel!
+    @IBOutlet weak var relevanceScoreLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
