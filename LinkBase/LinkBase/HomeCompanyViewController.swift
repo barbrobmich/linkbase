@@ -26,9 +26,21 @@ class HomeCompanyViewController: UIViewController {
     }
 
 
+    
+      //MARK: - Navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      //Get the new view controller using segue.destinationViewController.
+      //Pass the selected object to the new view controller.
+        if let sender = sender as? CompanyCollectionCell{
+            let vc = segue.destination as! CompanyDetailViewController
+            vc.company = sender.company
+        }
+     }
+ 
 
 }
 
+//MARK: - CollectionViewDelegate and Datasource
 extension HomeCompanyViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
