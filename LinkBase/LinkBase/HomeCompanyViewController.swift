@@ -17,7 +17,7 @@ class HomeCompanyViewController: UIViewController {
         super.viewDidLoad()
         CompanyCollection.delegate = self
         CompanyCollection.dataSource = self
-        
+
         // Make temp Company data
         let tempCompany = [Company(id: 1, name: "Uber", numEmployees: 100),
                        Company(id: 2, name: "Coupa", numEmployees: 500),
@@ -26,7 +26,8 @@ class HomeCompanyViewController: UIViewController {
     }
 
 
-    
+
+
       //MARK: - Navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       //Get the new view controller using segue.destinationViewController.
@@ -36,16 +37,20 @@ class HomeCompanyViewController: UIViewController {
             vc.company = sender.company
         }
      }
- 
+
 
 }
+
+
+
+
 
 //MARK: - CollectionViewDelegate and Datasource
 extension HomeCompanyViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // First section is hello blurb
         if section == 0{
@@ -54,7 +59,7 @@ extension HomeCompanyViewController: UICollectionViewDelegate, UICollectionViewD
         }else if section == 1{
             return self.companys.count
         }else{
-            // Third section is optional
+            // Third section is optional(Trending)
             return 0
         }
     }
