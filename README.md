@@ -26,7 +26,7 @@ Login Related Features:
 
 Company Related Features:
 
-- [ ] Home timeline presented in 2-3 sections (3rd section for optional) with collection view in section 2
+- [x] Home timeline presented in 2-3 sections (3rd section for optional) with collection view in section 2
 - [ ] Home timeline header in section 1
 - [ ] User can swipe to save company to favorites
 - [x] Tab bar controller set up in IB with icons for 1) Home, 2) Explore, 3) Favorites, and 4) Settings
