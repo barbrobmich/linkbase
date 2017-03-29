@@ -17,7 +17,7 @@ class HomeCompanyViewController: UIViewController {
         super.viewDidLoad()
         CompanyCollection.delegate = self
         CompanyCollection.dataSource = self
-        
+
         // Make temp Company data
         let tempCompany = [Company(id: 1, name: "Uber", numEmployees: 100),
                        Company(id: 2, name: "Coupa", numEmployees: 500),
@@ -26,8 +26,8 @@ class HomeCompanyViewController: UIViewController {
     }
 
 
-<<<<<<< HEAD
-    
+
+
       //MARK: - Navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       //Get the new view controller using segue.destinationViewController.
@@ -37,21 +37,20 @@ class HomeCompanyViewController: UIViewController {
             vc.company = sender.company
         }
      }
- 
+
 
 }
+
+
+
+
 
 //MARK: - CollectionViewDelegate and Datasource
-=======
-
-}
-
->>>>>>> Add collectionView with 2-3 sections and added icons to tabBar
 extension HomeCompanyViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // First section is hello blurb
         if section == 0{
