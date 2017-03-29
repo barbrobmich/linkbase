@@ -31,7 +31,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="3bl-SK-bpa"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="3bl-SK-bpa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tAd-YN-wkn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -59,7 +59,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="aXs-YP-nx3"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="aXs-YP-nx3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="guW-GY-upI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -115,7 +115,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Explore" id="qEg-VF-vo2"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="explore" id="qEg-VF-vo2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bGG-pP-3JI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -127,6 +127,7 @@
                 <tabBarController storyboardIdentifier="CompanyTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="OfC-aZ-JUm" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="PVp-aI-ZQu">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -142,4 +143,9 @@
             <point key="canvasLocation" x="-167.19999999999999" y="-49.025487256371818"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="explore" width="17" height="24"/>
+        <image name="home" width="25" height="25"/>
+        <image name="settings" width="25" height="25"/>
+    </resources>
 </document>
