@@ -59,7 +59,7 @@ extension HomeCompanyViewController: UICollectionViewDelegate, UICollectionViewD
         }else if section == 1{
             return self.companys.count
         }else{
-            // Third section is optional
+            // Third section is optional(Trending)
             return 0
         }
     }
