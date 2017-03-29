@@ -16,6 +16,18 @@
 		484E712D1E80CE2900040F9E /* Challenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 484E712C1E80CE2900040F9E /* Challenge.storyboard */; };
 		E502ED9D1E88FB9B0053B32A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E502ED9C1E88FB9B0053B32A /* Login.storyboard */; };
 		E502EDA11E88FD130053B32A /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502EDA01E88FD130053B32A /* SetupViewController.swift */; };
+		E502EDA31E89863E0053B32A /* CommsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502EDA21E89863E0053B32A /* CommsViewController.swift */; };
+		E502EDA51E8986A80053B32A /* TechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502EDA41E8986A80053B32A /* TechViewController.swift */; };
+		E502EDA71E89870D0053B32A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502EDA61E89870D0053B32A /* DashboardViewController.swift */; };
+		E502EDA91E8996200053B32A /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502EDA81E8996200053B32A /* HudView.swift */; };
+		E502EDAB1E8996D10053B32A /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502EDAA1E8996D10053B32A /* UtilityFunctions.swift */; };
+		E502EDB11E89AE410053B32A /* CommsQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502EDB01E89AE410053B32A /* CommsQuestion.swift */; };
+		E502EDB31E89B0FF0053B32A /* TechQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502EDB21E89B0FF0053B32A /* TechQuestions.swift */; };
+		E502EDB51E89D02D0053B32A /* ResultsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502EDB41E89D02D0053B32A /* ResultsDetailViewController.swift */; };
+		E502EDBA1E89D9090053B32A /* PeerReviewAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502EDB91E89D9090053B32A /* PeerReviewAllViewController.swift */; };
+		E502EDBC1E89D9170053B32A /* PeerReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502EDBB1E89D9170053B32A /* PeerReviewViewController.swift */; };
+		E502EDBE1E89DC130053B32A /* PeerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502EDBD1E89DC130053B32A /* PeerCell.swift */; };
+		E502EDC01E89F74F0053B32A /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502EDBF1E89F74F0053B32A /* ResultsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +42,18 @@
 		484E712C1E80CE2900040F9E /* Challenge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Challenge.storyboard; sourceTree = "<group>"; };
 		E502ED9C1E88FB9B0053B32A /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		E502EDA01E88FD130053B32A /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
+		E502EDA21E89863E0053B32A /* CommsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommsViewController.swift; sourceTree = "<group>"; };
+		E502EDA41E8986A80053B32A /* TechViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechViewController.swift; sourceTree = "<group>"; };
+		E502EDA61E89870D0053B32A /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		E502EDA81E8996200053B32A /* HudView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
+		E502EDAA1E8996D10053B32A /* UtilityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
+		E502EDB01E89AE410053B32A /* CommsQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommsQuestion.swift; sourceTree = "<group>"; };
+		E502EDB21E89B0FF0053B32A /* TechQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechQuestions.swift; sourceTree = "<group>"; };
+		E502EDB41E89D02D0053B32A /* ResultsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsDetailViewController.swift; sourceTree = "<group>"; };
+		E502EDB91E89D9090053B32A /* PeerReviewAllViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerReviewAllViewController.swift; sourceTree = "<group>"; };
+		E502EDBB1E89D9170053B32A /* PeerReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerReviewViewController.swift; sourceTree = "<group>"; };
+		E502EDBD1E89DC130053B32A /* PeerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerCell.swift; sourceTree = "<group>"; };
+		E502EDBF1E89F74F0053B32A /* ResultsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +124,9 @@
 		484E71301E80CE4800040F9E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E502EDAA1E8996D10053B32A /* UtilityFunctions.swift */,
+				E502EDB01E89AE410053B32A /* CommsQuestion.swift */,
+				E502EDB21E89B0FF0053B32A /* TechQuestions.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -131,6 +158,12 @@
 		484E71341E80CE7100040F9E /* Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				E502EDA21E89863E0053B32A /* CommsViewController.swift */,
+				E502EDA41E8986A80053B32A /* TechViewController.swift */,
+				E502EDA61E89870D0053B32A /* DashboardViewController.swift */,
+				E502EDB41E89D02D0053B32A /* ResultsDetailViewController.swift */,
+				E502EDB91E89D9090053B32A /* PeerReviewAllViewController.swift */,
+				E502EDBB1E89D9170053B32A /* PeerReviewViewController.swift */,
 			);
 			name = Challenge;
 			sourceTree = "<group>";
@@ -152,6 +185,9 @@
 		484E71371E80CE8600040F9E /* Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				E502EDA81E8996200053B32A /* HudView.swift */,
+				E502EDBD1E89DC130053B32A /* PeerCell.swift */,
+				E502EDBF1E89F74F0053B32A /* ResultsCell.swift */,
 			);
 			name = Challenge;
 			sourceTree = "<group>";
@@ -231,9 +267,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E502EDA51E8986A80053B32A /* TechViewController.swift in Sources */,
+				E502EDBC1E89D9170053B32A /* PeerReviewViewController.swift in Sources */,
+				E502EDA71E89870D0053B32A /* DashboardViewController.swift in Sources */,
 				484E711B1E80CDD600040F9E /* ViewController.swift in Sources */,
+				E502EDB31E89B0FF0053B32A /* TechQuestions.swift in Sources */,
+				E502EDB11E89AE410053B32A /* CommsQuestion.swift in Sources */,
+				E502EDB51E89D02D0053B32A /* ResultsDetailViewController.swift in Sources */,
+				E502EDBA1E89D9090053B32A /* PeerReviewAllViewController.swift in Sources */,
 				E502EDA11E88FD130053B32A /* SetupViewController.swift in Sources */,
+				E502EDA31E89863E0053B32A /* CommsViewController.swift in Sources */,
+				E502EDA91E8996200053B32A /* HudView.swift in Sources */,
+				E502EDAB1E8996D10053B32A /* UtilityFunctions.swift in Sources */,
 				484E71191E80CDD600040F9E /* AppDelegate.swift in Sources */,
+				E502EDBE1E89DC130053B32A /* PeerCell.swift in Sources */,
+				E502EDC01E89F74F0053B32A /* ResultsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

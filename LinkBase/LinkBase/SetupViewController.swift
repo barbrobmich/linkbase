@@ -37,7 +37,7 @@ class SetupViewController: UIViewController {
     
     @IBAction func onChallengeTapped(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Challenge", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "Challenge") as UIViewController
+        let controller = storyboard.instantiateViewController(withIdentifier: "ChallengeTabBarController") as! UITabBarController
         
         self.present(controller, animated: true, completion: nil)
     }

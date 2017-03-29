@@ -7,3 +7,11 @@
 //
 
 import Foundation
+import Dispatch
+
+// function to use in HUD
+
+func afterDelay(_ seconds: Double, closure: @escaping () -> ()) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: closure)
+}
+
