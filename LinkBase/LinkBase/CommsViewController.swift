@@ -25,13 +25,13 @@ class CommsViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPla
     var questions: CommsQuestionList!
     var index: Int!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // new question should appear - need to work on model
         questions = CommsQuestionList()
-     
         loadQuestion()
+   
         
         // set up recording session
         
