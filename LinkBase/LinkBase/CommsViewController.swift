@@ -25,6 +25,7 @@ class CommsViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPla
     var questions: CommsQuestionList!
     var index: Int!
     
+    var challengeGame: ScoreCard!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,8 @@ class CommsViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPla
         questions = CommsQuestionList()
         loadQuestion()
    
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        challengeGame = appDelegate.challengeGame
         
         // set up recording session
         
@@ -60,6 +63,16 @@ class CommsViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPla
         questionTextLabel.text = questions.commList[index].question
         
     }
+    
+
+    func updateScoreCard(completion: (_ success: Bool) -> Void) {
+        
+        challengeGame.commsQuestionsAnswered.insert(questions.commList[index], at: 0)
+        
+        completion(true)
+    }
+    
+    
     
     
     
@@ -171,6 +184,23 @@ class CommsViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPla
         print("Tapped on submit")
         
         // need to submit to Parse 
+        
+  
+        updateScoreCard { (success) -> Void in
+            if success{
+    
+                let currentDate = Date()
+                challengeGame.commsQuestionsAnswered[0].date = currentDate
+                challengeGame.commsQuestionsAnswered[0].points.submit = 2
+                challengeGame.commsQuestionsAnswered[0].audioFile = audioFileName // cannot be nil, rewrite code here, with validation
+                print(challengeGame.commsQuestionsAnswered[0].date!)
+                print(challengeGame.commsQuestionsAnswered[0].points.submit)
+                print(challengeGame.commsQuestionsAnswered[0].audioFile!)
+            }
+        }
+        
+        
+        
         
         let hudView = HudView.hud(inView: self.view, animated: true)
         hudView.text = "Done!"

@@ -26,6 +26,8 @@ class TechViewController: UIViewController {
     var index: Int!
     var answer: Int!
     
+    var challengeGame: ScoreCard!
+    
     // add property for user points (gets incremented if 3 in a row are correct)
     
     // need to add response for getting 3 in a row correct
@@ -35,6 +37,9 @@ class TechViewController: UIViewController {
 
         questions = TechQuestionList()
         correctAnswerCount = 0
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        challengeGame = appDelegate.challengeGame
         
         loadQuestion()
  
@@ -68,6 +73,14 @@ class TechViewController: UIViewController {
             isCorrect = true
             correctAnswerCount = correctAnswerCount + 1
             progressIndicator.setProgress(0.6, animated: true)
+           
+            updateScoreCard { (success) -> Void in
+                if success{
+                    let currentDate = Date()
+                    challengeGame.techQuestionsAnswered[0].date = currentDate
+                    print(challengeGame.techQuestionsAnswered[0].date!)
+                }
+            }
             
         } else {
             print("Sorry, try again")
@@ -76,6 +89,13 @@ class TechViewController: UIViewController {
         
         loadQuestion()
         
+    }
+    
+    func updateScoreCard(completion: (_ success: Bool) -> Void) {
+        
+        challengeGame.techQuestionsAnswered.insert(questions.techList[index], at: 0)
+    
+        completion(true)
     }
     
     

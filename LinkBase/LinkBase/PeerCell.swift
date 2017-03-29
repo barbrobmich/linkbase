@@ -10,12 +10,13 @@ import UIKit
 
 class PeerCell: UITableViewCell {
 
-    
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
+    var testCase: ScoreCard!
+    var soundAsset: NSDataAsset!
     
     override func awakeFromNib() {
         super.awakeFromNib()
