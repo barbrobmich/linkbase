@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--Home Company View Controller-->
         <scene sceneID="ses-DQ-196">
             <objects>
                 <viewController storyboardIdentifier="Company" id="iSe-nY-tHV" customClass="HomeCompanyViewController" customModule="LinkBase" customModuleProvider="target" sceneMemberID="viewController">
@@ -65,6 +65,7 @@
                                         <connections>
                                             <outlet property="companyName" destination="mo7-uj-qxy" id="gs8-uo-gID"/>
                                             <outlet property="numOfEmployee" destination="D7y-nB-Z6K" id="jf5-yj-fQD"/>
+                                            <segue destination="fiH-LV-2IN" kind="show" id="MuM-ee-VVZ"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -72,14 +73,59 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="home" id="3bl-SK-bpa"/>
+                    <navigationItem key="navigationItem" id="oce-B3-ydq"/>
                     <connections>
                         <outlet property="CompanyCollection" destination="c1h-4G-Ud3" id="jrV-2n-DBB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tAd-YN-wkn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000.8" y="-941.37931034482767"/>
+            <point key="canvasLocation" x="1940" y="-941.37931034482767"/>
+        </scene>
+        <!--Company Detail View Controller-->
+        <scene sceneID="ZYq-6S-Czb">
+            <objects>
+                <viewController id="fiH-LV-2IN" customClass="CompanyDetailViewController" customModule="LinkBase" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="72P-mg-H7d"/>
+                        <viewControllerLayoutGuide type="bottom" id="kd9-fC-Is6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="61W-uX-Ace">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coupa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVA-tJ-Lo6">
+                                <rect key="frame" x="147" y="97" width="97" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="num of Employees:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bum-Rm-GnX">
+                                <rect key="frame" x="28" y="178" width="146" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ruk-Z0-G0g">
+                                <rect key="frame" x="273" y="177" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="companyName" destination="hVA-tJ-Lo6" id="5od-gx-SXj"/>
+                        <outlet property="numEmployees" destination="Ruk-Z0-G0g" id="ayQ-Gb-HkX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Sa-ew-Xz6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2812" y="-934.18290854572717"/>
         </scene>
         <!--Settings-->
         <scene sceneID="buj-zU-b69">
@@ -176,7 +222,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="iSe-nY-tHV" kind="relationship" relationship="viewControllers" id="crr-6K-0Np"/>
+                        <segue destination="Phd-Yc-vZv" kind="relationship" relationship="viewControllers" id="crr-6K-0Np"/>
                         <segue destination="eke-Qb-2nA" kind="relationship" relationship="viewControllers" id="YkR-g4-mfK"/>
                         <segue destination="Qox-a7-nla" kind="relationship" relationship="viewControllers" id="1qe-Vu-3JQ"/>
                         <segue destination="BUJ-xQ-dMs" kind="relationship" relationship="viewControllers" id="O01-nu-f4p"/>
@@ -185,6 +231,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kXh-jm-jbg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-167.19999999999999" y="-49.025487256371818"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="nRM-H6-ge0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Phd-Yc-vZv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="3bl-SK-bpa"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="euH-pj-3Wk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="iSe-nY-tHV" kind="relationship" relationship="rootViewController" id="4os-lM-11D"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xoW-2c-9fb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000.8" y="-941.37931034482767"/>
         </scene>
     </scenes>
     <resources>
