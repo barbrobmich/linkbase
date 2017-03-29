@@ -32,8 +32,8 @@ Company Related Features:
 - [x] Tab bar controller set up in IB with icons for 1) Home, 2) Explore, 3) Favorites, and 4) Settings
 - [ ] Search Bar at top of page in nav bar
 - [ ] Profile icon as left nav bar, which segues to Profile VC, and icon on right, which segues to challenge section
-- [ ] Detail page shows company detail
-- [ ] Selecting company in home timeline goes to detail page
+- [x] Detail page shows company detail
+- [x] Selecting company in home timeline goes to detail page
 - [ ] Favorites shows companies in tile format
 - [ ] Selecting title goes to detail page
 - [ ] Map view displays companies within radius of current location
