@@ -29,7 +29,7 @@ class SetupViewController: UIViewController {
     
     @IBAction func onCompanyTapped(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Company", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "Company") as UIViewController
+        let controller = storyboard.instantiateViewController(withIdentifier: "CompanyTabBarController") as! UITabBarController
         
         self.present(controller, animated: true, completion: nil)
     }

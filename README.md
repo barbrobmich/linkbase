@@ -22,52 +22,52 @@ Login Related Features:
 - [ ] User can add projects
 - [ ] Gesture enabled matching with animation (horizontal scroll)
 - [ ] User can toggle add/edit view between affiliations and projects
-- [ ] User can add icon for affiliation or project, or else use default placeholder icon 
+- [ ] User can add icon for affiliation or project, or else use default placeholder icon
 
 Company Related Features:
 
 - [ ] Home timeline presented in 2-3 sections (3rd section for optional) with collection view in section 2
 - [ ] Home timeline header in section 1
 - [ ] User can swipe to save company to favorites
-- [ ] Tab bar controller set up in IB with icons for 1) Home, 2) Explore, 3) Favorites, and 4) Settings 
-- [ ] Search Bar at top of page in nav bar 
+- [x] Tab bar controller set up in IB with icons for 1) Home, 2) Explore, 3) Favorites, and 4) Settings
+- [ ] Search Bar at top of page in nav bar
 - [ ] Profile icon as left nav bar, which segues to Profile VC, and icon on right, which segues to challenge section
 - [ ] Detail page shows company detail
 - [ ] Selecting company in home timeline goes to detail page
 - [ ] Favorites shows companies in tile format
 - [ ] Selecting title goes to detail page
 - [ ] Map view displays companies within radius of current location
-- [ ] Settings page allows user to change settings 
+- [ ] Settings page allows user to change settings
 
 Challenge Related Features:
 
 - [ ] Alert asks user to select where to go
 - [X] Comms View Controller - user is presented with question and button to get new question
-- [X] Comms View Controller - user can record answer 
-- [X] Hud view is displayed after successful submission 
-- [ ] Tab bar with icons for stats, tech, comms sections 
-- [X] Tech View Controller presents question 
+- [X] Comms View Controller - user can record answer
+- [X] Hud view is displayed after successful submission
+- [ ] Tab bar with icons for stats, tech, comms sections
+- [X] Tech View Controller presents question
 - [X] User can select answer and submit
 - [ ] Status bar tracks if 3 in a row is met with points, shows points
 - [ ] Stats View Controller shows user name, photo, total points, and total questions answered
-- [ ] Stats View Controller - user can press button to go to detailed results 
+- [ ] Stats View Controller - user can press button to go to detailed results
 - [ ] Results show tableview for question and points.  Same view controller for tech and comm questions.
-- [ ] Grader View Controller - user can listen to recording and submit grade. 
+- [ ] Grader View Controller - user can listen to recording and submit grade.
 
 The following **optional** features are implemented:
 
 - [ ] Login: Alert messages displayed for incorrect login
-- [ ] Login: Password retrieval if forgot password 
-- [ ] Login: User can add video clip in profile page 
+- [ ] Login: Password retrieval if forgot password
+- [ ] Login: User can add video clip in profile page
 - [ ] Company: Add additional swipe features (share)
-- [ ] Company: Trending companies (raised $ in last week) in home timeline (section 3) 
+- [ ] Company: Trending companies (raised $ in last week) in home timeline (section 3)
 - [ ] Company: Matched affiliations shows on detail page
-- [ ] Company: Affiliations shown in mapview 
-- [ ] Company: Hide search bar when scrolling down/up (Facebook example) 
+- [ ] Company: Affiliations shown in mapview
+- [ ] Company: Hide search bar when scrolling down/up (Facebook example)
 - [ ] Challenge: 3 in a row on tech challenge triggers sound animation
 - [ ] Challenge: Detailed responses as separate VC or view
 - [ ] Challenge: More analytics on stats
-- [ ] Challenge: Stats - points from grading others 
+- [ ] Challenge: Stats - points from grading others
 
 
 ## Video Walkthrough
