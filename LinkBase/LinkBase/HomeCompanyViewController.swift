@@ -26,6 +26,7 @@ class HomeCompanyViewController: UIViewController {
     }
 
 
+<<<<<<< HEAD
     
       //MARK: - Navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -41,6 +42,11 @@ class HomeCompanyViewController: UIViewController {
 }
 
 //MARK: - CollectionViewDelegate and Datasource
+=======
+
+}
+
+>>>>>>> Add collectionView with 2-3 sections and added icons to tabBar
 extension HomeCompanyViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
