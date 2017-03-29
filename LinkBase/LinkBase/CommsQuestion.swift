@@ -11,24 +11,15 @@ import Foundation
 struct CommsQuestion {
     
     var question: String?
-    var questionID: Int?
-    
-    init() {
-        question = "Why did you decide to study computer science?"
-        questionID = 1;
-    }
+
 }
-
+    
 struct CommsQuestionList {
+    
+    var commList: [CommsQuestion] = [
+      CommsQuestion(question: "Why did you decide to study computer science"),
+      CommsQuestion(question: "Where did you grow up?"),
+      CommsQuestion(question: "What's your favorite food?")
+]
 
-    var commsList: [CommsQuestion] = []
-    var placeholder: CommsQuestion?
-    
-    init() {
-       
-        placeholder = CommsQuestion()
-        commsList.append(placeholder!)
-        
-    }
-    
 }

@@ -22,24 +22,60 @@ class TechViewController: UIViewController {
     
     var questions: TechQuestionList!
     var isCorrect: Bool?
+    var correctAnswerCount: Int!
+    var index: Int!
+    var answer: Int!
+    
+    // add property for user points (gets incremented if 3 in a row are correct)
+    
+    // need to add response for getting 3 in a row correct
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         questions = TechQuestionList()
-        questionLabel.text = questions.techList[0].question
-        ans1Button.setTitle(questions.techList[0].ans1, for: .normal)
-        ans2Button.setTitle(questions.techList[0].ans2, for: .normal)
-        ans3Button.setTitle(questions.techList[0].ans3, for: .normal)
-        ans4Button.setTitle(questions.techList[0].ans4, for: .normal)
+        correctAnswerCount = 0
+        
+        loadQuestion()
+ 
+    }
+    
+    func loadQuestion() {
+        
+        index = getRandomNumber(count: questions.techList.count)
+        
+        questionLabel.text = questions.techList[index].question
+        
+        ans1Button.setTitle(questions.techList[index].answers[0], for: .normal)
+        ans2Button.setTitle(questions.techList[index].answers[1], for: .normal)
+        ans3Button.setTitle(questions.techList[index].answers[2], for: .normal)
+        ans4Button.setTitle(questions.techList[index].answers[3], for: .normal)
+        
     }
 
     
-    func checkResults() {
+    func checkResults(answer: Int) {
         print("Checking results")
-        isCorrect = true
-        progressIndicator.setProgress(0.6, animated: true)
-    
+        
+        // this part still needs further work.  Need to have a pause or some type of break between getting the response and presenting new question.
+        
+        // Need to have progress indicator increment / decrement based on whether or not 3 in a row have been answered 
+        
+        
+        if (answer == questions.techList[index].correctAnswer){
+            
+            print("Correct!")
+            isCorrect = true
+            correctAnswerCount = correctAnswerCount + 1
+            progressIndicator.setProgress(0.6, animated: true)
+            
+        } else {
+            print("Sorry, try again")
+            progressIndicator.setProgress(0.2, animated: true)
+        }
+        
+        loadQuestion()
+        
     }
     
     
@@ -47,33 +83,49 @@ class TechViewController: UIViewController {
     
     @IBAction func selectedAns1(_ sender: UIButton) {
         print("Selected Answer 1")
+        answer = 0
         ans1Button.tintColor = UIColor.red
+        ans2Button.tintColor = UIColor.black
+        ans3Button.tintColor = UIColor.black
+        ans4Button.tintColor = UIColor.black
     }
     
     
     @IBAction func selectedAns2(_ sender: UIButton) {
         print("Selected Answer 2")
+        answer = 1
         ans2Button.tintColor = UIColor.red
+        ans1Button.tintColor = UIColor.black
+        ans3Button.tintColor = UIColor.black
+        ans4Button.tintColor = UIColor.black
 
     }
     
     
     @IBAction func selectedAns3(_ sender: UIButton) {
         print("Selected Answer 3")
+        answer = 2
         ans3Button.tintColor = UIColor.red
+        ans1Button.tintColor = UIColor.black
+        ans2Button.tintColor = UIColor.black
+        ans4Button.tintColor = UIColor.black
 
     }
     
     @IBAction func selectedAns4(_ sender: UIButton) {
         print("Selected Answer 4")
+        answer = 3
         ans4Button.tintColor = UIColor.red
+        ans1Button.tintColor = UIColor.black
+        ans2Button.tintColor = UIColor.black
+        ans3Button.tintColor = UIColor.black
 
     }
     
   
     @IBAction func onSubmit(_ sender: UIButton) {
         print("Tapped on submit")
-        checkResults()
+        checkResults(answer: answer)
     }
     
 
