@@ -1,0 +1,6 @@
+framework module Pods_LinkBase {
+  umbrella header "Pods-LinkBase-umbrella.h"
+
+  export *
+  module * { export * }
+}
