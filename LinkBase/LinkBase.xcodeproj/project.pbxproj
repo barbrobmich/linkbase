@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4808944C1E8E15FF00CA3CE0 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4808944B1E8E15FF00CA3CE0 /* Login.storyboard */; };
 		48347A5F1E8C5A8A00053E25 /* HomeCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48347A5E1E8C5A8A00053E25 /* HomeCompanyViewController.swift */; };
 		48347A611E8C61D800053E25 /* CompanyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48347A601E8C61D800053E25 /* CompanyCollectionCell.swift */; };
 		48347A631E8C630500053E25 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48347A621E8C630500053E25 /* Company.swift */; };
@@ -21,7 +22,10 @@
 		484E71231E80CDD600040F9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 484E71211E80CDD600040F9E /* LaunchScreen.storyboard */; };
 		484E712B1E80CE1800040F9E /* Company.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 484E712A1E80CE1800040F9E /* Company.storyboard */; };
 		484E712D1E80CE2900040F9E /* Challenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 484E712C1E80CE2900040F9E /* Challenge.storyboard */; };
-		A5BD93351E8D75780099F280 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5BD93341E8D75780099F280 /* Login.storyboard */; };
+		A5BD93371E8D79770099F280 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD93361E8D79770099F280 /* LoginViewController.swift */; };
+		A5BD93391E8D7FCF0099F280 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD93381E8D7FCF0099F280 /* CreateAccountViewController.swift */; };
+		A5BD933B1E8D85EA0099F280 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD933A1E8D85EA0099F280 /* ProfileViewController.swift */; };
+		DCBFA209C1CFD570EF6AD59A /* Pods_LinkBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55569BDE22B1266FC626A87 /* Pods_LinkBase.framework */; };
 		E502EDA11E88FD130053B32A /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502EDA01E88FD130053B32A /* SetupViewController.swift */; };
 		E502EDA31E89863E0053B32A /* CommsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502EDA21E89863E0053B32A /* CommsViewController.swift */; };
 		E502EDA51E8986A80053B32A /* TechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502EDA41E8986A80053B32A /* TechViewController.swift */; };
@@ -36,13 +40,10 @@
 		E502EDBE1E89DC130053B32A /* PeerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502EDBD1E89DC130053B32A /* PeerCell.swift */; };
 		E502EDC01E89F74F0053B32A /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502EDBF1E89F74F0053B32A /* ResultsCell.swift */; };
 		E502EDC61E8AD2070053B32A /* ScoreCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502EDC51E8AD2070053B32A /* ScoreCard.swift */; };
-		A5BD93371E8D79770099F280 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD93361E8D79770099F280 /* LoginViewController.swift */; };
-		A5BD93391E8D7FCF0099F280 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD93381E8D7FCF0099F280 /* CreateAccountViewController.swift */; };
-		A5BD933B1E8D85EA0099F280 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD933A1E8D85EA0099F280 /* ProfileViewController.swift */; };
-		DCBFA209C1CFD570EF6AD59A /* Pods_LinkBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55569BDE22B1266FC626A87 /* Pods_LinkBase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4808944B1E8E15FF00CA3CE0 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		48347A5E1E8C5A8A00053E25 /* HomeCompanyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCompanyViewController.swift; sourceTree = "<group>"; };
 		48347A601E8C61D800053E25 /* CompanyCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyCollectionCell.swift; sourceTree = "<group>"; };
 		48347A621E8C630500053E25 /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
@@ -60,7 +61,9 @@
 		484E712A1E80CE1800040F9E /* Company.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Company.storyboard; sourceTree = "<group>"; };
 		484E712C1E80CE2900040F9E /* Challenge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Challenge.storyboard; sourceTree = "<group>"; };
 		6265BAE788C7EC7F1C4A712F /* Pods-LinkBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LinkBase.release.xcconfig"; path = "Pods/Target Support Files/Pods-LinkBase/Pods-LinkBase.release.xcconfig"; sourceTree = "<group>"; };
-		A5BD93341E8D75780099F280 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		A5BD93361E8D79770099F280 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A5BD93381E8D7FCF0099F280 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		A5BD933A1E8D85EA0099F280 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E502EDA01E88FD130053B32A /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		E502EDA21E89863E0053B32A /* CommsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommsViewController.swift; sourceTree = "<group>"; };
 		E502EDA41E8986A80053B32A /* TechViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechViewController.swift; sourceTree = "<group>"; };
@@ -75,9 +78,6 @@
 		E502EDBD1E89DC130053B32A /* PeerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerCell.swift; sourceTree = "<group>"; };
 		E502EDBF1E89F74F0053B32A /* ResultsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
 		E502EDC51E8AD2070053B32A /* ScoreCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreCard.swift; sourceTree = "<group>"; };
-		A5BD93361E8D79770099F280 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		A5BD93381E8D7FCF0099F280 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
-		A5BD933A1E8D85EA0099F280 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E57F0C1E524FF77B44C10948 /* Pods-LinkBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LinkBase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LinkBase/Pods-LinkBase.debug.xcconfig"; sourceTree = "<group>"; };
 		F55569BDE22B1266FC626A87 /* Pods_LinkBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LinkBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -140,10 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				484E711C1E80CDD600040F9E /* Main.storyboard */,
-				E502ED9C1E88FB9B0053B32A /* Login.storyboard */,
 				484E712A1E80CE1800040F9E /* Company.storyboard */,
 				484E712C1E80CE2900040F9E /* Challenge.storyboard */,
-				A5BD93341E8D75780099F280 /* Login.storyboard */,
+				4808944B1E8E15FF00CA3CE0 /* Login.storyboard */,
 			);
 			name = StoryBoards;
 			sourceTree = "<group>";
@@ -285,7 +284,7 @@
 				TargetAttributes = {
 					484E71141E80CDD500040F9E = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = W3K36XA3XC;
+						DevelopmentTeam = G6A6KTQ9M6;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -315,7 +314,7 @@
 			files = (
 				484E712D1E80CE2900040F9E /* Challenge.storyboard in Resources */,
 				484E712B1E80CE1800040F9E /* Company.storyboard in Resources */,
-				A5BD93351E8D75780099F280 /* Login.storyboard in Resources */,
+				4808944C1E8E15FF00CA3CE0 /* Login.storyboard in Resources */,
 				484E71231E80CDD600040F9E /* LaunchScreen.storyboard in Resources */,
 				484E71201E80CDD600040F9E /* Assets.xcassets in Resources */,
 				484E711E1E80CDD600040F9E /* Main.storyboard in Resources */,
@@ -524,7 +523,7 @@
 			baseConfigurationReference = E57F0C1E524FF77B44C10948 /* Pods-LinkBase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = W3K36XA3XC;
+				DEVELOPMENT_TEAM = G6A6KTQ9M6;
 				INFOPLIST_FILE = LinkBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = codepath.LinkBase;
@@ -538,7 +537,7 @@
 			baseConfigurationReference = 6265BAE788C7EC7F1C4A712F /* Pods-LinkBase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = W3K36XA3XC;
+				DEVELOPMENT_TEAM = G6A6KTQ9M6;
 				INFOPLIST_FILE = LinkBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = codepath.LinkBase;
