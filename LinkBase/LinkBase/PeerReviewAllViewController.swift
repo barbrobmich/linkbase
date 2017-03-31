@@ -24,6 +24,12 @@ class PeerReviewAllViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet weak var countLabel: UILabel!
     
     
+    /* OVERALL NOTE FOR NEXT STEPS IN THIS VIEW CONTROLLER:  
+     currently, this view controller shows two temporary profiles.  These temp profiles should be replaced by other users.
+     Since a timestamp will be created when the other users created their recordings, we won't need the getDateFromPriorWeek method.  Also, the AV Player will need to be updated in this file.  It should just play from file (so exactly like in the comms controller), and we will not need the data asset. 
+    
+ 
+    */
     
     
     override func viewDidLoad() {
@@ -38,8 +44,10 @@ class PeerReviewAllViewController: UIViewController, UITableViewDataSource, UITa
         
         // set up date - test case is based on dates about 1 week from current date
         let currentDate = Date()
-        let tc1Date = currentDate - 500000
-        let tc2Date = currentDate - 750000
+        let tc1Date = getDateFromPriorWeek(currentDate: currentDate, numWeeks: 1)
+        let tc2Date = getDateFromPriorWeek(currentDate: currentDate, numWeeks: 2)
+        
+        
         
         // Not adding sound files at this stage, we will need to do so with real test data
         
