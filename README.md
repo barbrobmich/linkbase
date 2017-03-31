@@ -74,6 +74,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
+[![Alt text](https://img.youtube.com/vi/VID/0.jpg)](https://https://www.youtube.com/watch?v=nDXXWIjDtX0)
 <img src='https://www.youtube.com/watch?v=nDXXWIjDtX0' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <img src='http://i.imgur.com/tobeupdated.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
