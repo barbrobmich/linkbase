@@ -74,8 +74,11 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-[![Alt text](https://img.youtube.com/vi/VID/0.jpg)](https://https://www.youtube.com/watch?v=nDXXWIjDtX0)
-<img src='https://www.youtube.com/watch?v=nDXXWIjDtX0' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+// Please refer to following youtube link.  
+
+Click <a href="https://www.youtube.com/watch?v=nDXXWIjDtX0">here</a> to see the video of our Sprint 1.
+
+<a href=https://www.youtube.com/watch?v=nDXXWIjDtX0>
 
 <img src='http://i.imgur.com/tobeupdated.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
