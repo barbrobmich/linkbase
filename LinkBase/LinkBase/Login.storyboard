@@ -57,7 +57,6 @@
                                         </state>
                                         <connections>
                                             <action selector="logIn:" destination="ei6-FN-mlj" eventType="touchUpInside" id="MTf-ot-ca0"/>
-                                            <segue destination="AgN-zk-W8j" kind="show" id="8Pv-1D-LKD"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfg-Fi-Ja7">
@@ -68,7 +67,6 @@
                                         </state>
                                         <connections>
                                             <action selector="createAccount:" destination="ei6-FN-mlj" eventType="touchUpInside" id="GsJ-c2-NLY"/>
-                                            <segue destination="uE0-Wi-NaU" kind="presentation" id="ffH-zz-tLv"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -80,6 +78,8 @@
                     <connections>
                         <outlet property="emailTextField" destination="9St-63-6rN" id="wai-ho-eOm"/>
                         <outlet property="passwordTextField" destination="aiK-Fp-IWp" id="Nvm-x7-APl"/>
+                        <segue destination="AgN-zk-W8j" kind="show" identifier="loginSegue" id="SsU-N6-HXj"/>
+                        <segue destination="uE0-Wi-NaU" kind="show" identifier="createSegue" id="G3w-QD-UL7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dLt-aV-ypO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -106,6 +106,9 @@
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="createAccount:" destination="uE0-Wi-NaU" eventType="touchUpInside" id="XUT-tL-5nc"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Sen-Wp-Pc6">
                                 <rect key="frame" x="65" y="122" width="245" height="42"/>
@@ -159,6 +162,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="Xng-hd-q2z" id="S7F-1H-zbc"/>
+                        <outlet property="emailTextField" destination="OOn-K9-LKi" id="xV8-pu-uJd"/>
+                        <outlet property="firstNameTextField" destination="Sen-Wp-Pc6" id="4D6-YZ-MUe"/>
+                        <outlet property="lastNameTextField" destination="BNT-lj-MXK" id="AYS-hp-3sD"/>
+                        <outlet property="passwordTextField" destination="Rvg-yH-Rzl" id="hyg-5R-tFm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ock-rc-hWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -263,7 +273,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Dy2-8L-X8a">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AgN-zk-W8j" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Profile" automaticallyAdjustsScrollViewInsets="NO" id="AgN-zk-W8j" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2L5-J4-iXd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

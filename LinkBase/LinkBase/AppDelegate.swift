@@ -7,19 +7,36 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var challengeGame: ScoreCard?
-    
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+
         challengeGame = ScoreCard(playerName: "Lisa") // once user model is created, we should input the username instead
-        
+
+
+		Parse.initialize(
+			with: ParseClientConfiguration(block: { (configuration:ParseMutableClientConfiguration) in
+				configuration.applicationId = "InstagramClone"
+				configuration.server = "https://lit-chamber-26436.herokuapp.com/parse"
+			})
+		)
+
+		if PFUser.current() != nil {
+			self.window = UIWindow(frame: UIScreen.main.bounds)
+			let storyboard = UIStoryboard(name: "Login", bundle: nil)
+			let initialViewController = storyboard.instantiateViewController(withIdentifier: "Profile")
+			self.window?.rootViewController = initialViewController
+			self.window?.makeKeyAndVisible()
+		}
+
         return true
     }
 
@@ -47,4 +64,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-

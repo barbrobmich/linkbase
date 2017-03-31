@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class LoginViewController: UIViewController {
 	
@@ -26,11 +27,24 @@ class LoginViewController: UIViewController {
 	
 	
 	@IBAction func logIn(_ sender: Any) {
-		
+		PFUser.logInWithUsername(inBackground: emailTextField.text!, password: passwordTextField.text!) { (user: PFUser?, error: Error?) in
+			if user != nil {
+				self.performSegue(withIdentifier: "loginSegue", sender: nil)
+			} else {
+				print("unknown error occured!")
+				self.alert(message: "Incorrect username or password")
+			}
+		}
 	}
     
 	@IBAction func createAccount(_ sender: Any) {
-		
+		self.performSegue(withIdentifier: "createSegue", sender: nil)	
+	}
+	
+	func alert(message: String) {
+		let alert = UIAlertController(title: "Alert", message: "\(message)", preferredStyle: UIAlertControllerStyle.alert)
+		alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+		self.present(alert, animated: true, completion: nil)
 	}
 
     /*
