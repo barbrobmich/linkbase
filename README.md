@@ -11,9 +11,9 @@ The following **required** functionality is complete:
 
 Login Related Features:
 
-- [ ] User can create a new account
-- [ ] User can log into an existing account
-- [ ] User is persisted across app restarts
+- [x] User can create a new account
+- [x] User can log into an existing account
+- [x] User is persisted across app restarts
 - [ ] User can edit personal info in Profile Home Page
 - [ ] Profile Home Page displays tableview for competencies
 - [ ] User can add competencies / languages in the Profile Home Page
