@@ -7,18 +7,49 @@
 //
 
 import UIKit
+import Parse
+
 
 class ProfileViewController: UIViewController {
-
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var fullNameLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var weirdFactLabel: UILabel!
+    @IBOutlet weak var logoutButton: UIButton!
+    
+    
+    var currentUser: User!
+    var firstName: String!
+    var lastName: String!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-		
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        currentUser = User.current()
+        print("Current user: \(currentUser.username!)")
+        
+        firstName = getUserFirstName(user: currentUser)
+        lastName = getUserLastName(user: currentUser)
+        fullNameLabel.text = firstName! + " " + lastName!
+        
+        emailLabel.text = currentUser.email!
+        
     }
+    
+    // MARK: - IB ACTIONS
+    
+    @IBAction func onLogout(_ sender: UIButton) {
+        print("Tapped on logout")
+        User.logOut()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: User.userDidLogout), object: nil)
+    }
+    
+    
+    
     
 
     /*
