@@ -46,3 +46,27 @@ func getDateFromPriorWeek(currentDate: Date, numWeeks: Int) -> Date {
  
     return newDate
 }
+
+
+// this method removes the strings from the first and last name properties in Parse
+func getUserFirstName(user: User) -> String {
+   
+    let _firstname = user["firstname"]
+    let charSet = NSCharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ").inverted
+    let unformattedFirstName = String(describing: _firstname!)
+    let firstName = unformattedFirstName.components(separatedBy: charSet).joined(separator: "")
+    
+    return firstName
+}
+
+func getUserLastName(user: User) -> String{
+    
+    let _lastname = user["lastname"]
+    let charSet = NSCharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ").inverted
+    let unformattedLastName = String(describing: _lastname!)
+    let lastName = unformattedLastName.components(separatedBy: charSet).joined(separator: "")
+    
+    return lastName
+}
+
+

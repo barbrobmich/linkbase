@@ -15,12 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var challengeGame: ScoreCard?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
         challengeGame = ScoreCard(playerName: "Lisa") // once user model is created, we should input the username instead
-
 
 		Parse.initialize(
 			with: ParseClientConfiguration(block: { (configuration:ParseMutableClientConfiguration) in
@@ -29,14 +27,54 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 				configuration.server = "https://barbrobmich.herokuapp.com/parse"
 			})
 		)
+        
+        if User.current() != nil {
+            
+            print("There is a current user with name \(User.current()!.username!)")
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil) // change to "Login" after removing setup
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "Setup") // change to "Profile" after removing setup
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+            
+        } else {
+            print("There is no current user")
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil) // change to "Login" after removing setup VC
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "Setup") // change to "Profile after removing setupVC
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
 
-		if PFUser.current() != nil {
-			self.window = UIWindow(frame: UIScreen.main.bounds)
-			let storyboard = UIStoryboard(name: "Login", bundle: nil)
-			let initialViewController = storyboard.instantiateViewController(withIdentifier: "Profile")
-			self.window?.rootViewController = initialViewController
-			self.window?.makeKeyAndVisible()
-		}
+        }
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: User.userDidLogout), object: nil, queue: OperationQueue.main, using: { (NSNotification) -> Void in
+            
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            let storyboard = UIStoryboard(name: "Login", bundle: nil)
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "Login")
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        })
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: User.userDidLogIn), object: nil, queue: OperationQueue.main, using: { (NSNotification) -> Void in
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            let storyboard = UIStoryboard(name: "Login", bundle: nil)
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "Profile")
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+
+        })
+
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: User.userDidSignUp), object: nil, queue: OperationQueue.main, using: { (NSNotification) -> Void in
+            print("In notification center")
+            if self.window?.rootViewController != nil {
+                let storyboard = UIStoryboard(name: "Login", bundle: nil)
+               	let initialViewController = storyboard.instantiateViewController(withIdentifier: "Profile")
+                self.window?.rootViewController = initialViewController
+                self.window?.makeKeyAndVisible()
+            }
+        })
+
 
         return true
     }

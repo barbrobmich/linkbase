@@ -25,11 +25,17 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 	
+    
+    @IBAction func onTap(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
 	
 	@IBAction func logIn(_ sender: Any) {
 		PFUser.logInWithUsername(inBackground: emailTextField.text!, password: passwordTextField.text!) { (user: PFUser?, error: Error?) in
 			if user != nil {
-				self.performSegue(withIdentifier: "loginSegue", sender: nil)
+              NotificationCenter.default.post(name: NSNotification.Name(rawValue: User.userDidLogIn), object: nil)
+			//	self.performSegue(withIdentifier: "loginSegue", sender: nil)
 			} else {
 				print("unknown error occured!")
 				self.alert(message: "Incorrect username or password")
