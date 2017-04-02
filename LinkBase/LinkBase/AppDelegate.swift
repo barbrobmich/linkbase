@@ -69,7 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("In notification center")
             if self.window?.rootViewController != nil {
                 let storyboard = UIStoryboard(name: "Login", bundle: nil)
-               	let initialViewController = storyboard.instantiateViewController(withIdentifier: "Profile")
+               	let initialViewController = storyboard.instantiateViewController(withIdentifier: "ProfileSetup")
                 self.window?.rootViewController = initialViewController
                 self.window?.makeKeyAndVisible()
             }

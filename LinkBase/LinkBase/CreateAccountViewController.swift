@@ -33,7 +33,7 @@ class CreateAccountViewController: UIViewController {
     // MARK: - USER SET UP METHODS
     func createUser(completion: (_ success: Bool) -> Void) {
 
-        currentUser = User(_email: emailTextField.text!, _password: passwordTextField.text!, firstname: firstNameTextField.text!, lastname: lastNameTextField.text!)
+        currentUser = User(_email: emailTextField.text!, _password: passwordTextField.text!, _firstname: firstNameTextField.text!, _lastname: lastNameTextField.text!)
         completion (true)
 
     }
@@ -65,15 +65,43 @@ class CreateAccountViewController: UIViewController {
                     } else {
                     print("user created!")
                     self.alert(message: "User created!")
+                   
+//                    self.addName(fname: self.firstNameTextField.text!, lname: self.lastNameTextField.text!) { (success: Bool, error: Error?) -> Void in
+//                        
+//                        if success {
+//                            print("Successful Post to Parse")
+//                            self.alert(message: "User created!")
+//                        }
+//                        else {
+//                            print("Can't post to parse")
+//                        }
+//                    }
                 }
-              }
+                    
+                }
              }
-            }
-	}
+        }
+    }
+	
+    
+    
+    func addName(fname: String, lname: String, withCompletion completion: PFBooleanResultBlock?) {
+        
+            let _currentUser = User.current()
+            // Add relevant fields to the object
+         //  self.websiteStr = currentUser.objectForKey("website") as String
+           // _currentUser!["first_name"] = fname
+            _currentUser?.add(fname, forKey: "test")
+           // _currentUser!["last_name"] = lname
+        
+            // Save object (following function will save the object in Parse asynchronously)
+            _currentUser!.saveInBackground(block: completion)
+        
+    }
 	
 	func alert(message: String) {
 		let alert = UIAlertController(title: "Alert", message: "\(message)", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: {_ in self.goToProfile(currUser: self.currentUser!)
+        alert.addAction(UIAlertAction(title: "Now let's set up your profile", style: UIAlertActionStyle.default, handler: {_ in self.goToProfile(currUser: self.currentUser!)
         }))
 		self.present(alert, animated: true, completion: nil)
 	}
