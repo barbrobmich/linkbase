@@ -1,5 +1,5 @@
 //
-//  AddItemViewController.swift
+//  AddAffiliationsViewController.swift
 //  LinkBase
 //
 //  Created by Barbara Ristau on 4/1/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddItemViewController: UIViewController {
+class AddAffiliationsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

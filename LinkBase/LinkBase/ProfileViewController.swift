@@ -32,9 +32,6 @@ class ProfileViewController: UIViewController {
         currentUser = User.current()
         print("Current user: \(currentUser.username!)")
         
-        firstName = getUserFirstName(user: currentUser)
-        lastName = getUserLastName(user: currentUser)
-        fullNameLabel.text = firstName! + " " + lastName!
         
         emailLabel.text = currentUser.email!
         
