@@ -168,12 +168,13 @@ class CommsViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPla
         print("Tapped on play")
   
             do {
-                print("playing the recording")
-                
-                try audioPlayer = AVAudioPlayer(contentsOf: (audioFileName)!)
-                audioPlayer!.delegate = self
-                audioPlayer!.prepareToPlay()
-                audioPlayer!.play()
+				if audioFileName != nil {
+					print("playing the recording")
+					try audioPlayer = AVAudioPlayer(contentsOf: (audioFileName)!)
+					audioPlayer!.delegate = self
+					audioPlayer!.prepareToPlay()
+					audioPlayer!.play()
+				}
             } catch let error as NSError {
                 print("AudioPlayer error: \(error.localizedDescription)")
             }
