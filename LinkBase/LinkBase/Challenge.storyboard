@@ -70,7 +70,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Communication" id="Pxh-L0-dw7"/>
+                    <tabBarItem key="tabBarItem" title="Communication" image="communication" selectedImage="communication" id="Pxh-L0-dw7"/>
                     <connections>
                         <outlet property="newQuestionButton" destination="Hhj-15-VZa" id="aQC-se-K5M"/>
                         <outlet property="questionTextLabel" destination="g1u-qq-4lK" id="j62-oK-Q7n"/>
@@ -674,7 +674,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Programming" id="aAS-QP-4Lg"/>
+                    <tabBarItem key="tabBarItem" title="Programming" image="programming" id="aAS-QP-4Lg"/>
                     <connections>
                         <outlet property="ans1Button" destination="sD8-Gs-tpP" id="aCi-zC-1xl"/>
                         <outlet property="ans2Button" destination="YuM-cq-8cl" id="Ays-Sm-JdW"/>
@@ -713,7 +713,7 @@
         <scene sceneID="JH0-VC-Jfa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sBd-zl-8H3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Dashboard" id="HaW-p1-0Ng"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="dashboard" selectedImage="dashboard" id="HaW-p1-0Ng"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="l1m-h0-gz1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -729,6 +729,11 @@
             <point key="canvasLocation" x="744.79999999999995" y="989.95502248875573"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="communication" width="30" height="30"/>
+        <image name="dashboard" width="30" height="30"/>
+        <image name="programming" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3Ld-gp-iNk"/>
     </inferredMetricsTieBreakers>

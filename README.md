@@ -42,13 +42,13 @@ Company Related Features:
 Challenge Related Features:
 
 - [ ] Alert asks user to select where to go
-- [X] Comms View Controller - user is presented with question and button to get new question
-- [X] Comms View Controller - user can record answer
-- [X] Hud view is displayed after successful submission
-- [ ] Tab bar with icons for stats, tech, comms sections
-- [X] Tech View Controller presents question
-- [X] User can select answer and submit
-- [ ] Status bar tracks if 3 in a row is met with points, shows points
+- [x] Comms View Controller - user is presented with question and button to get new question
+- [x] Comms View Controller - user can record answer
+- [x] Hud view is displayed after successful submission
+- [x] Tab bar with icons for stats, tech, comms sections
+- [x] Tech View Controller presents question
+- [x] User can select answer and submit
+- [x] Status bar tracks if 3 in a row is met with points // shows points?
 - [ ] Stats View Controller shows user name, photo, total points, and total questions answered
 - [ ] Stats View Controller - user can press button to go to detailed results
 - [ ] Results show tableview for question and points.  Same view controller for tech and comm questions.
