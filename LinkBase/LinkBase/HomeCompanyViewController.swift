@@ -23,8 +23,21 @@ class HomeCompanyViewController: UIViewController {
                        Company(id: 2, name: "Coupa", numEmployees: 500),
                        Company(id: 3, name: "Google", numEmployees: 9001)]
         self.companys = tempCompany
+        
+    }
+    @IBAction func editProfile(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "ProfileSetup") as UIViewController
+        
+        self.present(controller, animated: true, completion: nil)
     }
 
+    @IBAction func goChallenge(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Challenge", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "ChallengeTabBarController") as! UITabBarController
+        
+        self.present(controller, animated: true, completion: nil)
+    }
 
     
       //MARK: - Navigation
