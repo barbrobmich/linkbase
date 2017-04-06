@@ -11,10 +11,16 @@ import Foundation
 class ScoreCard {
     
     var player: String?
-    var techQuestionsAnswered: [TechQuestion]
-    var commsQuestionsAnswered: [CommsQuestion]
+    var techQuestionsAnswered: [TechQuestion] = []
+    var commsQuestionsAnswered: [CommsQuestion] = []
     var grader: String?
     var dateGraded: Date?
+	
+	var techPoints: Int = 0
+	var currentCorrectAnswersInARow: Int = 0
+	var longestCorrectAnswerStreak: Int = 0
+	
+	var commsPoints: Int = 0
     
     init(playerName: String) {
         

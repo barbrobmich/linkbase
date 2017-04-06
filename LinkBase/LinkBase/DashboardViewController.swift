@@ -87,6 +87,16 @@ class DashboardViewController: UIViewController {
         
         totalPointsLabel.text = String(describing: totalCommunicationScore + totalProgrammingScore)
 
+		
+		totalPointsLabel.text = "\(challengeGame.commsPoints + challengeGame.techPoints)"
+		
+		numProgrammingQuestionsLabel.text = "\(challengeGame.commsQuestionsAnswered.count)"
+		programmingAvgScoreLabel.text = "\(challengeGame.techPoints / (challengeGame.techQuestionsAnswered.count == 0 ? 1 : challengeGame.techQuestionsAnswered.count))"
+		totalProgrammingScoreLabel.text = "\(challengeGame.techPoints)"
+		
+		numCommsQuestionsLabel.text = "\(challengeGame.techQuestionsAnswered.count)"
+		commsAvgScoreLabel.text = "\(challengeGame.commsPoints / (challengeGame.commsQuestionsAnswered.count == 0 ? 1 : challengeGame.commsQuestionsAnswered.count))"
+		totalCommunicationScoreLabel.text = "\(challengeGame.commsPoints)"
     }
 
     
