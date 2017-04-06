@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class DashboardViewController: UIViewController {
     
@@ -87,6 +88,7 @@ class DashboardViewController: UIViewController {
         
         totalPointsLabel.text = String(describing: totalCommunicationScore + totalProgrammingScore)
 
+//		profileImageView.image = User.current()
 		
 		totalPointsLabel.text = "\(challengeGame.commsPoints + challengeGame.techPoints)"
 		
