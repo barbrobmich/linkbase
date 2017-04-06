@@ -22,9 +22,10 @@ class LanguagesViewController: UIViewController {
         let navigationBar = navigationController!.navigationBar
         navigationBar.tintColor = UIColor.blue
         
-        let rightButton = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.plain, target: self, action: #selector(LanguagesViewController.goToProfile))
-        
-        navigationItem.rightBarButtonItem = rightButton
+        let submitButton = UIBarButtonItem(title: "Submit", style: .plain, target: self, action: #selector(LanguagesViewController.didTapSubmit))
+        let nextButton = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.plain, target: self, action: #selector(LanguagesViewController.goToProfile))
+
+        navigationItem.rightBarButtonItems = [nextButton, submitButton]
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -42,7 +43,10 @@ class LanguagesViewController: UIViewController {
         self.performSegue(withIdentifier: "Profile", sender: self)
     }
     
-    
+    func didTapSubmit() {
+        print("Submitting Match Data")
+        
+    }
     
 
     /*

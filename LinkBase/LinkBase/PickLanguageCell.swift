@@ -29,7 +29,7 @@ class PickLanguageCell: UITableViewCell {
         collectionView.delegate = self
         collectionView.dataSource = self
     }
-
+    
 }
 
 extension PickLanguageCell: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -49,9 +49,22 @@ extension PickLanguageCell: UICollectionViewDelegate, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-            let selectedIndex = categories[indexPath.item]
-            print("Selected Index: \(selectedIndex)")
+            let cell = collectionView.cellForItem(at: indexPath) as! LanguageCollectionCell
+            let name = cell.languageLabel.text
+            print("Name: \(name!)")
+            let languageView = cell.languageImageView
+            languageView?.layer.borderWidth = 5
+            languageView?.layer.borderColor = UIColor.blue.cgColor
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! LanguageCollectionCell
+        let name = cell.languageLabel.text
+        print("Name: \(name!)")
+        let languageView = cell.languageImageView
+        languageView?.layer.borderWidth = 0
+
     }
     
   

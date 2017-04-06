@@ -42,7 +42,6 @@ class AffiliationsCell: UITableViewCell {
         let query = PFQuery(className: Affiliation.parseClassName())
         
         query.order(byDescending: "_created_at")
-        //  query.includeKey("author")
         query.whereKey("user", equalTo: currentUser.username!)
         query.limit = 20
         query.findObjectsInBackground { (parseAffiliations: [PFObject]?, error: Error?) -> Void in
