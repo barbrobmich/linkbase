@@ -24,6 +24,7 @@ class ProfileSetupViewController: UIViewController {
     var currentUser: User!
     var firstName: String!
     var lastName: String!
+    var weirdFact: String!
     var image: UIImage!
     var changedProfileImage: Bool?
     var onPhotoTap: UITapGestureRecognizer!
@@ -31,12 +32,18 @@ class ProfileSetupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationController?.navigationBar.isHidden = false
+        
         currentUser = User.current()
         print("Current user: \(currentUser.username!)")
         changedProfileImage = false
         
-        firstNameTextField.text = currentUser.firstname
-        lastNameTextField.text = currentUser.lastname
+        firstName = currentUser.object(forKey: "firstname") as? String
+        lastName = currentUser.object(forKey: "lastname") as? String
+        weirdFact = currentUser.object(forKey: "weird_fact") as? String
+        
+        firstNameTextField.text = firstName
+        lastNameTextField.text = lastName
         
         emailTextField.text = currentUser.email!
         
@@ -54,7 +61,10 @@ class ProfileSetupViewController: UIViewController {
         let myImage = PFImageView()
         
         if currentUser["profile_image"] != nil {
-            myImage.file = currentUser["profile_image"] as? PFFile
+            
+//             weirdFact = currentUser.object(forKey: "weird_fact") as? String
+         //   myImage.file = currentUser["profile_image"] as? PFFile
+            myImage.file = currentUser.object(forKey: "profile_image") as? PFFile
             myImage.loadInBackground()
         } else {
             myImage.image = UIImage(named: "profilePlaceholder")!
@@ -97,21 +107,33 @@ class ProfileSetupViewController: UIViewController {
 
     @IBAction func onSave(_ sender: UIButton) {
     print("tapped on Save")
-        postProfileImageToParse()
         
-        User.updateProfileData(fname: firstNameTextField.text!, lname: lastNameTextField.text!, email: emailTextField.text!, weirdFact: weirdFactTextView.text) { (success: Bool, error: Error?) -> Void in
-            
-            if success {
-                print("Successful Post to Parse")
-                // segue to next section
-            }
-            else {
-                print("Can't post to parse")
-            }
-        }
+        // need to change this to update / just regular save 
+        
+//        postProfileImageToParse()
+//        
+//        User.updateProfileData(fname: firstNameTextField.text!, lname: lastNameTextField.text!, email: emailTextField.text!, weirdFact: weirdFactTextView.text) { (success: Bool, error: Error?) -> Void in
+//            
+//            if success {
+//                print("Successful Post to Parse")
+//                // segue to next section
+//            }
+//            else {
+//                print("Can't post to parse")
+//            }
+//        }
     }
     
 
+    
+    
+    @IBAction func onLogout(_ sender: UIButton) {
+        print("Logging Out")
+        User.logOut()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: User.userDidLogout), object: nil)
+        
+    }
+    
     
     // MARK: - Navigation
 
@@ -121,9 +143,9 @@ class ProfileSetupViewController: UIViewController {
         if segue.identifier == "AddAffiliations" {
             print("Going to add Affiliations")
      
-            let affiliationsVC = segue.destination
-                as! AddAffiliationsViewController
-            affiliationsVC.navigationItem.title = "Add Affiliations"
+            let destinationNavigationController = segue.destination as! UINavigationController
+            let targetController = destinationNavigationController.topViewController as! AddAffiliationsViewController
+            targetController.navigationItem.title = "Add Affiliations"
         }
         
     }
