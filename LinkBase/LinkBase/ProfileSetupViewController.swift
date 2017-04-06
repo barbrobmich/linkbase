@@ -28,6 +28,8 @@ class ProfileSetupViewController: UIViewController {
     var image: UIImage!
     var changedProfileImage: Bool?
     var onPhotoTap: UITapGestureRecognizer!
+    var locationManager: CLLocationManager?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,12 @@ class ProfileSetupViewController: UIViewController {
         currentUser = User.current()
         print("Current user: \(currentUser.username!)")
         changedProfileImage = false
+        
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        locationManager?.startUpdatingLocation()
+        locationManager?.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager?.requestWhenInUseAuthorization()
         
         firstName = currentUser.object(forKey: "firstname") as? String
         lastName = currentUser.object(forKey: "lastname") as? String
@@ -217,5 +225,38 @@ extension ProfileSetupViewController: UIImagePickerControllerDelegate, UINavigat
         present(alertController, animated: true, completion: nil)
     }
     
+}
+
+// MARK: - Get current location
+
+extension ProfileSetupViewController: CLLocationManagerDelegate{
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("Updating with current location")
+        // only create an Address if a User doesn't have an address
+        if !self.currentUser.hasAddress{
+            // makes an address based on current location
+            let addr = Address(lat: (locations.last?.coordinate.latitude)!, long: (locations.last?.coordinate.longitude)!)
+            self.locationManager?.stopUpdatingLocation()
+            //constructs the address from the GPS location
+            addr.setLocationfromSelf()
+            //updates to Parse
+            addr.postAddress(user: self.currentUser) { (success: Bool, error: Error?) in
+                if success{
+                    print("address sent to parse")
+                }else{
+                    print("dang no address sent")
+                }
+                
+            }
+        }
+        
+        
+        
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Error trying to get gps: \(error.localizedDescription)")
+    }
 }
 

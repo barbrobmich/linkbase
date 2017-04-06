@@ -14,6 +14,7 @@ class User: PFUser {
     var firstname: String?
     var lastname: String?
     var weirdFact: String?
+    var hasAddress: Bool = false
     
     static let userDidLogout = "UserDidLogout"
     static let userDidSignUp = "UserDidSignUp"
