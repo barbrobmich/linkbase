@@ -35,9 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             print("There is a current user with username \(User.current()!.username!)")
             self.window = UIWindow(frame: UIScreen.main.bounds)
-            let storyboard = UIStoryboard(name: "Login", bundle: nil) // change to "Login" after removing setup
+            let storyboard = UIStoryboard(name: "Company", bundle: nil) // change to "Login" after removing setup
             // change to Main for team submission
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "ProfileSetup") // change to "Profile" after removing setup
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "CompanyTabBarController") as! UITabBarController
             // change to setup for team submission
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
@@ -45,8 +45,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             print("There is no current user")
             self.window = UIWindow(frame: UIScreen.main.bounds)
-            let storyboard = UIStoryboard(name: "Main", bundle: nil) // change to "Login" after removing setup VC
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "Setup") // change to "Profile after removing setupVC
+            let storyboard = UIStoryboard(name: "Login", bundle: nil) // change to "Login" after removing setup VC
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "Login") // change to "Profile after removing setupVC
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
 

@@ -73,7 +73,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="oce-B3-ydq"/>
+                    <navigationItem key="navigationItem" id="oce-B3-ydq">
+                        <barButtonItem key="leftBarButtonItem" title="Edit Profile" id="Wve-Mj-CZJ">
+                            <connections>
+                                <action selector="editProfile:" destination="iSe-nY-tHV" id="j4Y-2t-JOv"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Challenge" id="nof-U6-kmB">
+                            <connections>
+                                <action selector="goChallenge:" destination="iSe-nY-tHV" id="IIv-i9-3oU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="CompanyCollection" destination="c1h-4G-Ud3" id="jrV-2n-DBB"/>
                     </connections>
