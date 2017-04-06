@@ -22,8 +22,6 @@ class TechViewController: UIViewController {
     
     var questions: TechQuestionList!
     var isCorrect: Bool?
-	var correctAnswerCount: Int!
-	var correctAnswersInARow: Int = 0
     var index: Int!
     var answer: Int!
     
@@ -37,11 +35,11 @@ class TechViewController: UIViewController {
         super.viewDidLoad()
 
         questions = TechQuestionList()
-        correctAnswerCount = 0
+
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         challengeGame = appDelegate.challengeGame
-        
+		
         loadQuestion()
  
     }
@@ -72,12 +70,13 @@ class TechViewController: UIViewController {
             
 //            print("Correct!")
             isCorrect = true
-            correctAnswerCount = correctAnswerCount + 1
-			correctAnswersInARow += 1
+            challengeGame.techPoints = challengeGame.techPoints + 1
+			challengeGame.currentCorrectAnswersInARow += 1
 			
-			progressIndicator.setProgress(Float(correctAnswersInARow) / 3.0, animated: true)
 			
-			if correctAnswersInARow == 3 {
+			progressIndicator.setProgress(Float(challengeGame.currentCorrectAnswersInARow) / 3.0, animated: true)
+			
+			if challengeGame.currentCorrectAnswersInARow == 3 {
 				onThreeInARow()
 			}
 			
@@ -91,7 +90,7 @@ class TechViewController: UIViewController {
             
         } else {
             print("Incorrect")
-			correctAnswersInARow = 0
+			challengeGame.currentCorrectAnswersInARow = 0
             progressIndicator.setProgress(0, animated: true)
         }
         
