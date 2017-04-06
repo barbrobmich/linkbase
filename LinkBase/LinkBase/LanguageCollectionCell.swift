@@ -11,5 +11,5 @@ import UIKit
 class LanguageCollectionCell: UICollectionViewCell {
     
     @IBOutlet weak var languageLabel: UILabel!
-    
+    @IBOutlet weak var languageImageView: UIImageView!
 }
