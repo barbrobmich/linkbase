@@ -19,6 +19,18 @@ class User: PFUser {
     static let userDidSignUp = "UserDidSignUp"
     static let userDidLogIn = "UserDidLogIn"
     
+//    override init(){
+//      super.init()
+//    }
+//    
+//    init(user: PFUser){
+//        super.init()
+//        
+//        firstname = user["firstname"] as? String
+//        lastname = user["lastname"] as? String
+//        
+//    }
+    
     convenience init(_email: String, _password: String, _firstname: String, _lastname: String){
         
         self.init()
@@ -33,7 +45,7 @@ class User: PFUser {
 
         print("Created a user")
   }
-    
+ 
     
   class func updateProfileData(fname: String, lname: String, email: String, weirdFact: String, withCompletion completion: PFBooleanResultBlock?) {
  

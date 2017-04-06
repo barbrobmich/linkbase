@@ -28,12 +28,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			})
 		)
         
+        Affiliation.registerSubclass()
+        Project.registerSubclass()
+        
         if User.current() != nil {
             
-            print("There is a current user with name \(User.current()!.username!)")
+            print("There is a current user with username \(User.current()!.username!)")
             self.window = UIWindow(frame: UIScreen.main.bounds)
-            let storyboard = UIStoryboard(name: "Main", bundle: nil) // change to "Login" after removing setup
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "Setup") // change to "Profile" after removing setup
+            let storyboard = UIStoryboard(name: "Login", bundle: nil) // change to "Login" after removing setup
+            // change to Main for team submission
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "ProfileSetup") // change to "Profile" after removing setup
+            // change to setup for team submission
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
             
@@ -59,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: User.userDidLogIn), object: nil, queue: OperationQueue.main, using: { (NSNotification) -> Void in
             self.window = UIWindow(frame: UIScreen.main.bounds)
             let storyboard = UIStoryboard(name: "Login", bundle: nil)
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "Profile")
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "ProfileSetup")
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
 
@@ -70,8 +75,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if self.window?.rootViewController != nil {
                 let storyboard = UIStoryboard(name: "Login", bundle: nil)
                	let initialViewController = storyboard.instantiateViewController(withIdentifier: "ProfileSetup")
-                self.window?.rootViewController = initialViewController
-                self.window?.makeKeyAndVisible()
+//                let controller = storyboard.instantiateViewControllerWithIdentifier("HomeVC")
+                //navigationController!.pushViewController("ProfileSetup")
+                
+              self.window?.rootViewController = initialViewController
+                 self.window?.makeKeyAndVisible()
             }
         })
 

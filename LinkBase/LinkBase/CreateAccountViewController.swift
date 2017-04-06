@@ -64,19 +64,9 @@ class CreateAccountViewController: UIViewController {
                     //				// Show the errorString somewhere and let the user try again.
                     } else {
                     print("user created!")
+                    self.setUpDefaultAffiliation()
                     self.alert(message: "User created!")
-                   
-//                    self.addName(fname: self.firstNameTextField.text!, lname: self.lastNameTextField.text!) { (success: Bool, error: Error?) -> Void in
-//                        
-//                        if success {
-//                            print("Successful Post to Parse")
-//                            self.alert(message: "User created!")
-//                        }
-//                        else {
-//                            print("Can't post to parse")
-//                        }
-//                    }
-                }
+                    }
                     
                 }
              }
@@ -84,20 +74,24 @@ class CreateAccountViewController: UIViewController {
     }
 	
     
-    
-    func addName(fname: String, lname: String, withCompletion completion: PFBooleanResultBlock?) {
+    //This feature assumes that the user is a CodePath student.  Default affiliation with CodePath is created so that the affiliations array is not empty when the user accesses this view controller (AddAffiliations).
+    func setUpDefaultAffiliation(){
+        let defaultAffiliation = Affiliation()
+        defaultAffiliation.name = "CodePath"
+        defaultAffiliation.user = User.current()
         
-            let _currentUser = User.current()
-            // Add relevant fields to the object
-         //  self.websiteStr = currentUser.objectForKey("website") as String
-           // _currentUser!["first_name"] = fname
-            _currentUser?.add(fname, forKey: "test")
-           // _currentUser!["last_name"] = lname
-        
-            // Save object (following function will save the object in Parse asynchronously)
-            _currentUser!.saveInBackground(block: completion)
-        
+        Affiliation.postAffiliationToParse(affiliation: defaultAffiliation) { (success: Bool, error: Error?) -> Void in
+            
+            if success {
+                print("Successful Post to Parse")
+            }
+            else {
+                print("Can't post to parse")
+            }
+        }
     }
+    
+
 	
 	func alert(message: String) {
 		let alert = UIAlertController(title: "Alert", message: "\(message)", preferredStyle: UIAlertControllerStyle.alert)
