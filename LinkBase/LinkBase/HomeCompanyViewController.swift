@@ -64,4 +64,6 @@ extension HomeCompanyViewController: UICollectionViewDelegate, UICollectionViewD
         cell.company = company
         return cell
     }
+    
+    
 }

@@ -80,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tAd-YN-wkn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1940" y="-941.37931034482767"/>
+            <point key="canvasLocation" x="1481" y="-839"/>
         </scene>
         <!--Company Detail View Controller-->
         <scene sceneID="ZYq-6S-Czb">
@@ -125,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Sa-ew-Xz6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2812" y="-934.18290854572717"/>
+            <point key="canvasLocation" x="2398" y="-839"/>
         </scene>
         <!--Settings-->
         <scene sceneID="buj-zU-b69">
@@ -193,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="guW-GY-upI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000.8" y="689.5052473763119"/>
+            <point key="canvasLocation" x="834" y="968"/>
         </scene>
         <!--Favorites Company View Controller-->
         <scene sceneID="p7T-YY-3ev">
@@ -270,7 +270,7 @@
         <!--Explore-->
         <scene sceneID="HwY-ZN-nnm">
             <objects>
-                <viewController id="eke-Qb-2nA" sceneMemberID="viewController">
+                <viewController id="eke-Qb-2nA" customClass="ExploreCompanyViewController" customModule="LinkBase" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BI2-il-Cjb"/>
                         <viewControllerLayoutGuide type="bottom" id="rZC-yU-nQq"/>
@@ -279,21 +279,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Explore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4m-ui-C1H">
-                                <rect key="frame" x="171" y="203" width="73" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ckw-c4-eZl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="630"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ckw-c4-eZl" secondAttribute="trailing" id="1ly-1h-LV3"/>
+                            <constraint firstAttribute="bottom" secondItem="ckw-c4-eZl" secondAttribute="bottom" constant="37" id="9MP-dO-ZEE"/>
+                            <constraint firstItem="ckw-c4-eZl" firstAttribute="leading" secondItem="SYC-Jd-pWU" secondAttribute="leading" id="UnT-7Z-PMd"/>
+                            <constraint firstItem="ckw-c4-eZl" firstAttribute="top" secondItem="SYC-Jd-pWU" secondAttribute="top" id="bWJ-Ce-oPy"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Explore" image="explore" id="qEg-VF-vo2"/>
+                    <connections>
+                        <outlet property="mapView" destination="ckw-c4-eZl" id="2uL-c7-eve"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bGG-pP-3JI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1002" y="-49"/>
+            <point key="canvasLocation" x="940" y="-49.025487256371818"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ntw-FT-xfa">
@@ -333,7 +338,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xoW-2c-9fb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000.8" y="-941.37931034482767"/>
+            <point key="canvasLocation" x="622" y="-838"/>
         </scene>
     </scenes>
     <resources>

@@ -22,6 +22,8 @@
 		484E71231E80CDD600040F9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 484E71211E80CDD600040F9E /* LaunchScreen.storyboard */; };
 		484E712B1E80CE1800040F9E /* Company.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 484E712A1E80CE1800040F9E /* Company.storyboard */; };
 		484E712D1E80CE2900040F9E /* Challenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 484E712C1E80CE2900040F9E /* Challenge.storyboard */; };
+		4880152F1E945960001A947A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4880152E1E945960001A947A /* MapKit.framework */; };
+		488015311E945A3B001A947A /* ExploreCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488015301E945A3B001A947A /* ExploreCompanyViewController.swift */; };
 		A5BD93371E8D79770099F280 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD93361E8D79770099F280 /* LoginViewController.swift */; };
 		A5BD93391E8D7FCF0099F280 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD93381E8D7FCF0099F280 /* CreateAccountViewController.swift */; };
 		A5BD933B1E8D85EA0099F280 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD933A1E8D85EA0099F280 /* ProfileViewController.swift */; };
@@ -78,6 +80,8 @@
 		484E71241E80CDD600040F9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		484E712A1E80CE1800040F9E /* Company.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Company.storyboard; sourceTree = "<group>"; };
 		484E712C1E80CE2900040F9E /* Challenge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Challenge.storyboard; sourceTree = "<group>"; };
+		4880152E1E945960001A947A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		488015301E945A3B001A947A /* ExploreCompanyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreCompanyViewController.swift; sourceTree = "<group>"; };
 		6265BAE788C7EC7F1C4A712F /* Pods-LinkBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LinkBase.release.xcconfig"; path = "Pods/Target Support Files/Pods-LinkBase/Pods-LinkBase.release.xcconfig"; sourceTree = "<group>"; };
 		A5BD93361E8D79770099F280 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A5BD93381E8D7FCF0099F280 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4880152F1E945960001A947A /* MapKit.framework in Frameworks */,
 				DCBFA209C1CFD570EF6AD59A /* Pods_LinkBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,6 +138,7 @@
 		3711CF3562F24C5868564647 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4880152E1E945960001A947A /* MapKit.framework */,
 				F55569BDE22B1266FC626A87 /* Pods_LinkBase.framework */,
 			);
 			name = Frameworks;
@@ -243,6 +249,7 @@
 				48347A641E8C693500053E25 /* CompanyDetailViewController.swift */,
 				48347A661E8C6DB600053E25 /* SettingCompanyViewController.swift */,
 				48347A681E8C6F3000053E25 /* FavoritesCompanyViewController.swift */,
+				488015301E945A3B001A947A /* ExploreCompanyViewController.swift */,
 			);
 			name = Company;
 			sourceTree = "<group>";
@@ -482,6 +489,7 @@
 				E502EE301E92B3930053B32A /* ProjectCollectionCell.swift in Sources */,
 				E502EE451E9544A30053B32A /* AffProjCollectionCell.swift in Sources */,
 				48347A5F1E8C5A8A00053E25 /* HomeCompanyViewController.swift in Sources */,
+				488015311E945A3B001A947A /* ExploreCompanyViewController.swift in Sources */,
 				E502EDA31E89863E0053B32A /* CommsViewController.swift in Sources */,
 				E502EE2C1E92AFEA0053B32A /* ProjectsCell.swift in Sources */,
 				E502EE281E91D5790053B32A /* AddNewTableViewController.swift in Sources */,
