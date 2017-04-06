@@ -18,8 +18,8 @@ Login Related Features:
 - [ ] Profile Home Page displays tableview for competencies
 - [ ] User can add competencies / languages in the Profile Home Page
 - [ ] User can select language to add/edit projects or affiliations
-- [ ] User can add affiliations
-- [ ] User can add projects
+- [X] User can add affiliations
+- [X] User can add projects
 - [ ] Gesture enabled matching with animation (horizontal scroll)
 - [ ] User can toggle add/edit view between affiliations and projects
 - [ ] User can add icon for affiliation or project, or else use default placeholder icon
