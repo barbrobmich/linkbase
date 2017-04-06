@@ -22,7 +22,8 @@ class TechViewController: UIViewController {
     
     var questions: TechQuestionList!
     var isCorrect: Bool?
-    var correctAnswerCount: Int!
+	var correctAnswerCount: Int!
+	var correctAnswersInARow: Int = 0
     var index: Int!
     var answer: Int!
     
@@ -69,11 +70,17 @@ class TechViewController: UIViewController {
         
         if (answer == questions.techList[index].correctAnswer){
             
-            print("Correct!")
+//            print("Correct!")
             isCorrect = true
             correctAnswerCount = correctAnswerCount + 1
-            progressIndicator.setProgress(0.6, animated: true)
-           
+			correctAnswersInARow += 1
+			
+			progressIndicator.setProgress(Float(correctAnswersInARow) / 3.0, animated: true)
+			
+			if correctAnswersInARow == 3 {
+				onThreeInARow()
+			}
+			
             updateScoreCard { (success) -> Void in
                 if success{
                     let currentDate = Date()
@@ -83,13 +90,18 @@ class TechViewController: UIViewController {
             }
             
         } else {
-            print("Sorry, try again")
-            progressIndicator.setProgress(0.2, animated: true)
+            print("Incorrect")
+			correctAnswersInARow = 0
+            progressIndicator.setProgress(0, animated: true)
         }
         
         loadQuestion()
         
     }
+	
+	func onThreeInARow() {
+		print("three in a row!");
+	}
     
     func updateScoreCard(completion: (_ success: Bool) -> Void) {
         
@@ -144,8 +156,9 @@ class TechViewController: UIViewController {
     
   
     @IBAction func onSubmit(_ sender: UIButton) {
-        print("Tapped on submit")
-        checkResults(answer: answer)
+		if answer != nil {
+			checkResults(answer: answer)
+		}
     }
     
 
