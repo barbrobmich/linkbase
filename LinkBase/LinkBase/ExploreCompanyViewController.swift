@@ -13,21 +13,15 @@ import CoreLocation
 class ExploreCompanyViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
-    var locationManager: CLLocationManager?
     var currentLocation: CLLocation?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        locationManager = CLLocationManager()
-        locationManager?.delegate = self
-        locationManager?.startUpdatingLocation()
-        locationManager?.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        locationManager?.requestWhenInUseAuthorization()
-        
         var mapCenter: CLLocationCoordinate2D
         
+        // switch this to pull from parse the user's address
         if let location = self.currentLocation?.coordinate{
             mapCenter = location
         }else{
@@ -41,6 +35,7 @@ class ExploreCompanyViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     func setMapRegion(mapCenter: CLLocationCoordinate2D){
         let mapSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
@@ -62,17 +57,4 @@ class ExploreCompanyViewController: UIViewController {
 
 }
 
-// MARK: - Get current location
 
-extension ExploreCompanyViewController: CLLocationManagerDelegate{
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("Updating with current location")
-        self.currentLocation = locations[0]
-        self.setMapRegion(mapCenter: (self.currentLocation?.coordinate)!)
-        self.locationManager?.stopUpdatingLocation()
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Error trying to get gps: \(error.localizedDescription)")
-    }
-}

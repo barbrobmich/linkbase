@@ -24,6 +24,7 @@
 		484E712D1E80CE2900040F9E /* Challenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 484E712C1E80CE2900040F9E /* Challenge.storyboard */; };
 		4880152F1E945960001A947A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4880152E1E945960001A947A /* MapKit.framework */; };
 		488015311E945A3B001A947A /* ExploreCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488015301E945A3B001A947A /* ExploreCompanyViewController.swift */; };
+		4885C62B1E95E55B00682F3C /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885C62A1E95E55B00682F3C /* Address.swift */; };
 		A5BD93371E8D79770099F280 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD93361E8D79770099F280 /* LoginViewController.swift */; };
 		A5BD93391E8D7FCF0099F280 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD93381E8D7FCF0099F280 /* CreateAccountViewController.swift */; };
 		A5BD933B1E8D85EA0099F280 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD933A1E8D85EA0099F280 /* ProfileViewController.swift */; };
@@ -82,6 +83,7 @@
 		484E712C1E80CE2900040F9E /* Challenge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Challenge.storyboard; sourceTree = "<group>"; };
 		4880152E1E945960001A947A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		488015301E945A3B001A947A /* ExploreCompanyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreCompanyViewController.swift; sourceTree = "<group>"; };
+		4885C62A1E95E55B00682F3C /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		6265BAE788C7EC7F1C4A712F /* Pods-LinkBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LinkBase.release.xcconfig"; path = "Pods/Target Support Files/Pods-LinkBase/Pods-LinkBase.release.xcconfig"; sourceTree = "<group>"; };
 		A5BD93361E8D79770099F280 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A5BD93381E8D7FCF0099F280 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				E502EE231E9184CB0053B32A /* Affiliation.swift */,
 				E502EE2D1E92B1800053B32A /* Project.swift */,
 				E502EE351E92EB730053B32A /* Language.swift */,
+				4885C62A1E95E55B00682F3C /* Address.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				A5BD933B1E8D85EA0099F280 /* ProfileViewController.swift in Sources */,
 				E502EE2E1E92B1800053B32A /* Project.swift in Sources */,
 				E502EE431E9544730053B32A /* AffProjCell.swift in Sources */,
+				4885C62B1E95E55B00682F3C /* Address.swift in Sources */,
 				484E711B1E80CDD600040F9E /* ViewController.swift in Sources */,
 				E502EE201E915AD60053B32A /* AffiliationCollectionCell.swift in Sources */,
 				E502EDB31E89B0FF0053B32A /* TechQuestions.swift in Sources */,
