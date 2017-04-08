@@ -114,6 +114,7 @@ extension AffProjCell: UICollectionViewDelegate, UICollectionViewDataSource {
             
             switch cellSection {
             case 1:
+                print("matchedItemsCount: \(matchedItemsCount!)")
                 return matchedItemsCount
             case 2:
                 return affiliations.count
@@ -150,10 +151,10 @@ extension AffProjCell: UICollectionViewDelegate, UICollectionViewDataSource {
                     cell.affProjNameLabel.text = retrievedAffiliations[indexPath.item].name
                 }
                  if indexPath.item >= retrievedAffiliations.count && indexPath.item < matchedItemsCount {
-//                    print("loading the projects second")
-//                    cell.project = retrievedProjects[projectIndex]
-//                    cell.affProjNameLabel.text = retrievedProjects[projectIndex].name
-//                    projectIndex += 1
+                    print("loading the projects second")
+                    cell.project = retrievedProjects[projectIndex]
+                    cell.affProjNameLabel.text = retrievedProjects[projectIndex].name
+                    projectIndex += 1
                 }
             }
             

@@ -27,6 +27,7 @@ class ProfileLanguageCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
+        
         collectionView.dataSource = self
         collectionView.delegate = self
     }
@@ -37,6 +38,7 @@ extension ProfileLanguageCell: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
+        //return 10
         return matchedItemsCount
     }
     

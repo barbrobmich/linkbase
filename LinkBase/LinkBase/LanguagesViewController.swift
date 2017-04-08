@@ -45,7 +45,12 @@ class LanguagesViewController: UIViewController, SelectLanguageDelegate, Matched
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         navigationItem.title = "Languages"
-        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        retrievedAffiliations = []
+        retrievedProjects = []
     }
     
     func goToProfile() {
@@ -79,7 +84,7 @@ class LanguagesViewController: UIViewController, SelectLanguageDelegate, Matched
                 if success {
                     print("Successful Post to Parse")
                     self.fetchMatches()
-                    // clear bordres on cells
+                    // to do: clear borders on cells
                 }
                 else {
                     print("Can't post to parse")

@@ -96,23 +96,27 @@ class ProfileViewController: UIViewController {
                 for match in myMatches {
                     if let match = match as? LanguageCollection {
                         langCollection = match
-                        print("langcollection lang: \(langCollection.language_name!)")
+                        let affCount = langCollection.affiliations?.count
+                        let projCount = langCollection.projects?.count
+                        print("langcollection lang: \(langCollection.language_name!) has \(affCount!) affiliations and \(projCount!) projects)")
                         self.languageCollections.append(langCollection)
-                            if let affMatches = langCollection.affiliations {
-                                var i = 0
-                                for affiliation in affMatches{
-                                    self.languageCollections[i].affiliations?.append(affiliation)
-                                    i += 1
-                                }
-                        }
-                            if let projMatches = langCollection.projects{
-                                var i = 0
-                                for proj in projMatches {
-                                    self.languageCollections[i].projects?.append(proj)
-                                    print("Project is: \(self.languageCollections[i].projects![0].name!)")
-                                    i += 1
-                                }
-                            }
+//                            if let affMatches = langCollection.affiliations {
+//                                var i = 0
+//                                for affiliation in affMatches{
+//                                    self.languageCollections[i].affiliations?.append(affiliation)
+//                                    print("appending \(affiliation.name!)to \(self.languageCollections[i].language_name!)")
+//                                    i += 1
+//                                }
+//                        }
+//                            if let projMatches = langCollection.projects{
+//                                var i = 0
+//                                for proj in projMatches {
+//                                    self.languageCollections[i].projects?.append(proj)
+//                                    print("appending \(proj.name!) to \(self.languageCollections[i].language_name!)")
+//                                    print("First project is: \(self.languageCollections[i].projects![0].name!)")
+//                                    i += 1
+//                                }
+//                            }
                     }
                     self.tableView.reloadData()
                     print("count of items in language collection: \(self.languageCollections.count)")
@@ -121,7 +125,9 @@ class ProfileViewController: UIViewController {
                 print(error?.localizedDescription as Any)
             }
         }
+            print("Count of langCollections: \(self.languageCollections.count)")
     }
+
 }
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
@@ -131,16 +137,24 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("NumRows: \(languageCollections.count)")
         return languageCollections.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileLanguageCell", for: indexPath) as! ProfileLanguageCell
         
-        cell.languageNameLabel.text = self.languageCollections[indexPath.item].language_name
-        cell.matchedItemsCount = (self.languageCollections[indexPath.item].affiliations?.count)! + (self.languageCollections[indexPath.item].projects?.count)!
-         cell.retrievedAffiliations = self.languageCollections[indexPath.item].affiliations!
-         cell.retrievedProjects = self.languageCollections[indexPath.item].projects!
+        let langName = self.languageCollections[indexPath.item].language_name!
+        cell.languageNameLabel.text = langName
+        let affiliationsCount = self.languageCollections[indexPath.item].affiliations?.count
+        let projectsCount = self.languageCollections[indexPath.item].projects?.count
+        let itemCount = affiliationsCount! + projectsCount!
+        
+  
+        print("item count in \(langName): \(itemCount), with \(affiliationsCount!) affiliations and \(projectsCount!) projects")
+        cell.matchedItemsCount = itemCount
+          cell.retrievedAffiliations = self.languageCollections[indexPath.item].affiliations!
+          cell.retrievedProjects = self.languageCollections[indexPath.item].projects!
        
         return cell
     }
@@ -149,12 +163,11 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         print("selected row at \(indexPath.row)")
         let selectedIndex = indexPath.row
         let controller = storyboard?.instantiateViewController(withIdentifier: "Languages") as! LanguagesViewController
+        controller.matchedItemsCount = (self.languageCollections[indexPath.item].affiliations?.count)! + (self.languageCollections[indexPath.item].projects?.count)!
         controller.currentLanguageCollection = self.languageCollections[selectedIndex]
         controller.selectedLanguage = self.languageCollections[selectedIndex].language_name!
         controller.retrievedAffiliations = self.languageCollections[selectedIndex].affiliations!
         controller.retrievedProjects = self.languageCollections[selectedIndex].projects!
-        controller.matchedItemsCount = (self.languageCollections[indexPath.item].affiliations?.count)! + (self.languageCollections[indexPath.item].projects?.count)!
-        
         print("passing language collection with language: \(self.languageCollections[selectedIndex].language_name!)")
         let navContr = UINavigationController(rootViewController:controller)
         self.present(navContr, animated: true, completion: nil)
