@@ -47,6 +47,24 @@ class ProfileViewController: UIViewController {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: User.userDidLogout), object: nil)
     }
     
+    
+    @IBAction func goToCompany(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Company", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "CompanyTabBarController") as! UITabBarController
+        
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func goToChallenge(_ sender: UIButton) {
+        print("Tapped on go to challenge")
+        let storyboard = UIStoryboard(name: "Challenge", bundle: nil)
+                let controller = storyboard.instantiateViewController(withIdentifier: "ChallengeTabBarController") as! UITabBarController
+        
+                self.present(controller, animated: true, completion: nil)
+    }
+
+    
     /*
     // MARK: - Navigation
 
@@ -121,14 +139,26 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.languageNameLabel.text = self.languageCollections[indexPath.item].language_name
         cell.matchedItemsCount = (self.languageCollections[indexPath.item].affiliations?.count)! + (self.languageCollections[indexPath.item].projects?.count)!
-//        if (self.languageCollections[indexPath.item].affiliations?.count)! > 0 {
-//            print("affiliation name: \(self.languageCollections[indexPath.item].affiliations![0].name!)")
-//        }
          cell.retrievedAffiliations = self.languageCollections[indexPath.item].affiliations!
          cell.retrievedProjects = self.languageCollections[indexPath.item].projects!
        
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("selected row at \(indexPath.row)")
+        let selectedIndex = indexPath.row
+        let controller = storyboard?.instantiateViewController(withIdentifier: "Languages") as! LanguagesViewController
+        controller.currentLanguageCollection = self.languageCollections[selectedIndex]
+        controller.selectedLanguage = self.languageCollections[selectedIndex].language_name!
+        controller.retrievedAffiliations = self.languageCollections[selectedIndex].affiliations!
+        controller.retrievedProjects = self.languageCollections[selectedIndex].projects!
+        controller.matchedItemsCount = (self.languageCollections[indexPath.item].affiliations?.count)! + (self.languageCollections[indexPath.item].projects?.count)!
+        
+        print("passing language collection with language: \(self.languageCollections[selectedIndex].language_name!)")
+        let navContr = UINavigationController(rootViewController:controller)
+        self.present(navContr, animated: true, completion: nil)
+        
+    }
 
 }

@@ -42,28 +42,21 @@ extension ProfileLanguageCell: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfileLangCollectionCell", for: indexPath) as! ProfileLangCollectionCell
-        
-        cell.affProjNameLabel.text = "Item \(indexPath.item)"
    
         if retrievedAffiliations.count != 0 && retrievedProjects.count == 0 {
-            print("loading affiliations")
             cell.affiliation = retrievedAffiliations[indexPath.item]
             cell.affProjNameLabel.text = retrievedAffiliations[indexPath.item].name
         }
         else if retrievedProjects.count != 0 && retrievedAffiliations.count == 0 {
-            print("loading projects")
             cell.project = retrievedProjects[indexPath.item]
             cell.affProjNameLabel.text = retrievedProjects[indexPath.item].name
         }
         else if retrievedAffiliations.count > 0 && retrievedProjects.count > 0 {
-            print("loading affiliations & projects")
             if indexPath.item < retrievedAffiliations.count {
-                print("loading the affiliations first")
                 cell.affiliation = retrievedAffiliations[indexPath.item]
                 cell.affProjNameLabel.text = retrievedAffiliations[indexPath.item].name
             }
             if indexPath.item >= retrievedAffiliations.count && indexPath.item < matchedItemsCount {
-                print("loading the projects second")
                 cell.project = retrievedProjects[projectIndex]
                 cell.affProjNameLabel.text = retrievedProjects[projectIndex].name
                 projectIndex += 1

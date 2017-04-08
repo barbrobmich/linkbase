@@ -326,13 +326,19 @@
                                     <rect key="frame" x="276" y="7" width="83" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Challenge"/>
+                                    <connections>
+                                        <action selector="goToChallenge:" destination="xYL-qJ-gU5" eventType="touchUpInside" id="tsN-zD-prK"/>
+                                    </connections>
                                 </button>
                             </barButtonItem>
                             <barButtonItem style="plain" id="n25-3V-Slc">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Qtk-ba-lkI">
                                     <rect key="frame" x="185" y="7" width="83" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Profile"/>
+                                    <state key="normal" title="Company"/>
+                                    <connections>
+                                        <action selector="goToCompany:" destination="xYL-qJ-gU5" eventType="touchUpInside" id="hWr-ub-uXD"/>
+                                    </connections>
                                 </button>
                             </barButtonItem>
                         </rightBarButtonItems>

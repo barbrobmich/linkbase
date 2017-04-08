@@ -150,10 +150,10 @@ extension AffProjCell: UICollectionViewDelegate, UICollectionViewDataSource {
                     cell.affProjNameLabel.text = retrievedAffiliations[indexPath.item].name
                 }
                  if indexPath.item >= retrievedAffiliations.count && indexPath.item < matchedItemsCount {
-                    print("loading the projects second")
-                    cell.project = retrievedProjects[projectIndex]
-                    cell.affProjNameLabel.text = retrievedProjects[projectIndex].name
-                    projectIndex += 1
+//                    print("loading the projects second")
+//                    cell.project = retrievedProjects[projectIndex]
+//                    cell.affProjNameLabel.text = retrievedProjects[projectIndex].name
+//                    projectIndex += 1
                 }
             }
             
