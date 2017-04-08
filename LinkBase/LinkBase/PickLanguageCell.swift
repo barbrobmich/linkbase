@@ -9,12 +9,10 @@
 import UIKit
 
 class PickLanguageCell: UITableViewCell {
-    
  
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    var selectLanguageDelegate: SelectLanguageDelegate?
     let categories = [Language.category.Swift, Language.category.Java, Language.category.Javascript, Language.category.Python]
-    
     var currentUser: User!
     
     override func awakeFromNib() {
@@ -31,6 +29,11 @@ class PickLanguageCell: UITableViewCell {
     }
     
 }
+
+protocol SelectLanguageDelegate : class {
+    func didSelectLanguage(language: String) -> String 
+}
+
 
 extension PickLanguageCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -50,24 +53,22 @@ extension PickLanguageCell: UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
             let cell = collectionView.cellForItem(at: indexPath) as! LanguageCollectionCell
-            let name = cell.languageLabel.text
-            print("Name: \(name!)")
+            let selectedLanguage = cell.languageLabel.text
             let languageView = cell.languageImageView
             languageView?.layer.borderWidth = 5
             languageView?.layer.borderColor = UIColor.blue.cgColor
-        
+            self.selectLanguageDelegate?.didSelectLanguage(language: selectedLanguage!)
+
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! LanguageCollectionCell
         let name = cell.languageLabel.text
-        print("Name: \(name!)")
         let languageView = cell.languageImageView
         languageView?.layer.borderWidth = 0
 
     }
-    
-  
-    
 }
+
+
 

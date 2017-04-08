@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Affiliation.registerSubclass()
         Project.registerSubclass()
+        LanguageCollection.registerSubclass()
         
         if User.current() != nil {
             

@@ -15,6 +15,9 @@ class User: PFUser {
     var lastname: String?
     var weirdFact: String?
     var hasAddress: Bool = false
+    var languageCollections: [LanguageCollection] = []
+    
+    // update the user to have language collections as a property 
     
     static let userDidLogout = "UserDidLogout"
     static let userDidSignUp = "UserDidSignUp"
