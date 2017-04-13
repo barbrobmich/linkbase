@@ -10,8 +10,9 @@ import UIKit
 
 class AffProjCollectionCell: UICollectionViewCell {
     
-    
     @IBOutlet weak var affProjNameLabel: UILabel!
     @IBOutlet weak var affProjImageView: UIImageView!
+    var affiliation: Affiliation!
+    var project: Project! 
     
 }

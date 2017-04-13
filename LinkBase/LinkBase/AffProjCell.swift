@@ -19,8 +19,14 @@ class AffProjCell: UITableViewCell {
     var currentUser: User!
     var projects: [Project] = []
     var affiliations: [Affiliation] = []
-    var matchedItems: [[Any]] = []
-    var affProjMatch: [Any] = []
+    var selectedLanguage: String?
+    var selectedAffiliationsDelegate: MatchedAffiliationsAndProjects?
+    var selectedProjectsDelegate: MatchedAffiliationsAndProjects?
+    var matchedItemsCount: Int!
+    var combinedMatches: [Any] = []
+    var retrievedAffiliations: [Affiliation] = []
+    var retrievedProjects: [Project] = []
+    var projectIndex: Int = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +34,7 @@ class AffProjCell: UITableViewCell {
         currentUser = User.current()
         fetchAffiliations()
         fetchProjects()
-    
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -38,7 +44,7 @@ class AffProjCell: UITableViewCell {
         collectionView.dataSource = self
     }
     
-    // MARK: - FETCH USER PROJECTS & AFFILIATIONS
+    // MARK: - FETCH PROJECTS, AFFILIATIONS & MATCHES
     
     func fetchAffiliations() {
         
@@ -52,11 +58,8 @@ class AffProjCell: UITableViewCell {
             if let myAffiliations = parseAffiliations {
                 print("ParseAffiliations: \(parseAffiliations!)")
                 for affiliation in myAffiliations {
-                    if affiliation is Affiliation {
-                        print("object is subclass")
-                    }
                     if let affiliation = affiliation as? Affiliation {
-                        print("object cast as affiliation")
+                        // casting object as affiliation
                         self.affiliations.append(affiliation)
                     }
                 }
@@ -81,26 +84,24 @@ class AffProjCell: UITableViewCell {
             if let myProjects = parseProjects {
                 print("ParseProjects: \(myProjects)")
                 for project in myProjects {
-                    if project is Project {
-                        print("object is subclass")
-                    }
                     if let project = project as? Project {
-                        print("object cast as project")
+                        // casting object as project  
                         self.projects.append(project)
                     }
                 }
                 self.collectionView.reloadData()
-                
-                //    print("First one is \(self.projects[0].name!)")
             } else {
                 print(error?.localizedDescription as Any)
             }
         }
     }
-    
-
-
 }
+
+protocol MatchedAffiliationsAndProjects : class {
+     func didSelectAffiliation(affiliation: Affiliation) -> Affiliation
+     func didSelectProject(project: Project) -> Project
+}
+
 
 
 // MARK: - COLLECTIONVIEW EXTENSION
@@ -113,7 +114,8 @@ extension AffProjCell: UICollectionViewDelegate, UICollectionViewDataSource {
             
             switch cellSection {
             case 1:
-                return matchedItems.count
+                print("matchedItemsCount: \(matchedItemsCount!)")
+                return matchedItemsCount
             case 2:
                 return affiliations.count
             case 3:
@@ -128,14 +130,41 @@ extension AffProjCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AffProjCollectionCell", for: indexPath) as! AffProjCollectionCell
-        
+   
         if cellSection == 1 {
-          //  cell.affProjNameLabel.text = mymatches[indexPath.item].name
+            
+            if retrievedAffiliations.count != 0 && retrievedProjects.count == 0 {
+                print("loading affiliations")
+                cell.affiliation = retrievedAffiliations[indexPath.item]
+                cell.affProjNameLabel.text = retrievedAffiliations[indexPath.item].name
+            }
+            else if retrievedProjects.count != 0 && retrievedAffiliations.count == 0 {
+                print("loading projects")
+                cell.project = retrievedProjects[indexPath.item]
+                cell.affProjNameLabel.text = retrievedProjects[indexPath.item].name
+            }
+            else if retrievedAffiliations.count > 0 && retrievedProjects.count > 0 {
+                print("loading affiliations & projects")
+                if indexPath.item < retrievedAffiliations.count {
+                    print("loading the affiliations first")
+                    cell.affiliation = retrievedAffiliations[indexPath.item]
+                    cell.affProjNameLabel.text = retrievedAffiliations[indexPath.item].name
+                }
+                 if indexPath.item >= retrievedAffiliations.count && indexPath.item < matchedItemsCount {
+                    print("loading the projects second")
+                    cell.project = retrievedProjects[projectIndex]
+                    cell.affProjNameLabel.text = retrievedProjects[projectIndex].name
+                    projectIndex += 1
+                }
+            }
+            
         }
         else if cellSection == 2 {
+            cell.affiliation = affiliations[indexPath.item]
             cell.affProjNameLabel.text = affiliations[indexPath.item].name
         }
         else if cellSection == 3 {
+            cell.project = projects[indexPath.item]
             cell.affProjNameLabel.text = projects[indexPath.item].name
         }
         
@@ -146,16 +175,20 @@ extension AffProjCell: UICollectionViewDelegate, UICollectionViewDataSource {
         
         if cellSection == 2 {
             let cell = collectionView.cellForItem(at: indexPath) as! AffProjCollectionCell
-            let name = cell.affProjNameLabel.text
-            print("AffiliationName: \(name!)")
+            let affiliation = cell.affiliation
+            self.selectedAffiliationsDelegate?.didSelectAffiliation(affiliation: affiliation!)
+            
+            // add border if selected
             let affImageView = cell.affProjImageView
             affImageView?.layer.borderWidth = 5
             affImageView?.layer.borderColor = UIColor.red.cgColor
         }
         if cellSection == 3 {
             let cell = collectionView.cellForItem(at: indexPath) as! AffProjCollectionCell
-            let name = cell.affProjNameLabel.text
-            print("ProjectName: \(name!)")
+            let project = cell.project
+            self.selectedProjectsDelegate?.didSelectProject(project: project!)
+            
+            // add border if selected
             let projImageView = cell.affProjImageView
             projImageView?.layer.borderWidth = 5
             projImageView?.layer.borderColor = UIColor.red.cgColor

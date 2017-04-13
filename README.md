@@ -14,13 +14,13 @@ Login Related Features:
 - [x] User can create a new account
 - [x] User can log into an existing account
 - [x] User is persisted across app restarts
-- [ ] User can edit personal info in Profile Home Page
-- [ ] Profile Home Page displays tableview for competencies
-- [ ] User can add competencies / languages in the Profile Home Page
-- [ ] User can select language to add/edit projects or affiliations
+- [X] User can edit personal info in ProfileSetup Page
+- [X] Profile Home Page displays tableview for competencies
+- [ ] User can edit languages/projects/affiliations from the Profile Home Page
+- [X] User can select language to add/edit projects or affiliations
 - [X] User can add affiliations
 - [X] User can add projects
-- [ ] Gesture enabled matching with animation (horizontal scroll)
+- [X] Gesture enabled matching with animation (horizontal scroll)
 - [ ] User can toggle add/edit view between affiliations and projects
 - [ ] User can add icon for affiliation or project, or else use default placeholder icon
 

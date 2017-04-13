@@ -61,6 +61,8 @@
 		E502EE3C1E94AE660053B32A /* LanguageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502EE3B1E94AE660053B32A /* LanguageCollectionCell.swift */; };
 		E502EE431E9544730053B32A /* AffProjCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502EE421E9544730053B32A /* AffProjCell.swift */; };
 		E502EE451E9544A30053B32A /* AffProjCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E502EE441E9544A30053B32A /* AffProjCollectionCell.swift */; };
+		E52403821E9892FD001D4870 /* ProfileLanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52403811E9892FD001D4870 /* ProfileLanguageCell.swift */; };
+		E52403841E989D10001D4870 /* ProfileLangCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52403831E989D10001D4870 /* ProfileLangCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +122,8 @@
 		E502EE3B1E94AE660053B32A /* LanguageCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageCollectionCell.swift; sourceTree = "<group>"; };
 		E502EE421E9544730053B32A /* AffProjCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AffProjCell.swift; sourceTree = "<group>"; };
 		E502EE441E9544A30053B32A /* AffProjCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AffProjCollectionCell.swift; sourceTree = "<group>"; };
+		E52403811E9892FD001D4870 /* ProfileLanguageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileLanguageCell.swift; sourceTree = "<group>"; };
+		E52403831E989D10001D4870 /* ProfileLangCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileLangCollectionCell.swift; sourceTree = "<group>"; };
 		E57F0C1E524FF77B44C10948 /* Pods-LinkBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LinkBase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LinkBase/Pods-LinkBase.debug.xcconfig"; sourceTree = "<group>"; };
 		F55569BDE22B1266FC626A87 /* Pods_LinkBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LinkBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -333,6 +337,8 @@
 				E502EE3B1E94AE660053B32A /* LanguageCollectionCell.swift */,
 				E502EE421E9544730053B32A /* AffProjCell.swift */,
 				E502EE441E9544A30053B32A /* AffProjCollectionCell.swift */,
+				E52403811E9892FD001D4870 /* ProfileLanguageCell.swift */,
+				E52403831E989D10001D4870 /* ProfileLangCollectionCell.swift */,
 			);
 			name = Languages;
 			sourceTree = "<group>";
@@ -468,10 +474,12 @@
 				E502EDA51E8986A80053B32A /* TechViewController.swift in Sources */,
 				48347A671E8C6DB600053E25 /* SettingCompanyViewController.swift in Sources */,
 				48347A651E8C693500053E25 /* CompanyDetailViewController.swift in Sources */,
+				E52403821E9892FD001D4870 /* ProfileLanguageCell.swift in Sources */,
 				E502EE3A1E9343210053B32A /* PickLanguageCell.swift in Sources */,
 				E502EDBC1E89D9170053B32A /* PeerReviewViewController.swift in Sources */,
 				E502EDA71E89870D0053B32A /* DashboardViewController.swift in Sources */,
 				E502EE2A1E9203DE0053B32A /* ProjectsViewController.swift in Sources */,
+				E52403841E989D10001D4870 /* ProfileLangCollectionCell.swift in Sources */,
 				A5BD93391E8D7FCF0099F280 /* CreateAccountViewController.swift in Sources */,
 				E502EE241E9184CB0053B32A /* Affiliation.swift in Sources */,
 				E502EE181E904EB50053B32A /* User.swift in Sources */,

@@ -29,7 +29,6 @@ class ProfileSetupViewController: UIViewController {
     var changedProfileImage: Bool?
     var onPhotoTap: UITapGestureRecognizer!
     var locationManager: CLLocationManager?
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -157,8 +156,6 @@ class ProfileSetupViewController: UIViewController {
         }
         
     }
-    
-
 }
 
 
@@ -249,10 +246,6 @@ extension ProfileSetupViewController: CLLocationManagerDelegate{
                 
             }
         }
-        
-        
-        
-        
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

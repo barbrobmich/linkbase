@@ -87,6 +87,4 @@ extension AddAffiliationsViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return (section%2 == 0) ? "My Affiliations":"Categories"
     }
-    
-
 }

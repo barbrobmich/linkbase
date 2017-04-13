@@ -19,7 +19,6 @@ class AffiliationsCell: UITableViewCell {
     var cellSection: Int!
     var currentUser: User!
     var affiliations: [Affiliation] = []
- 
     
     override func awakeFromNib() {
         super.awakeFromNib()
